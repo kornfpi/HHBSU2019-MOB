@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TodoREST.Views.OneIssuePage" Title="Issue">
+   
+        
+        <StackLayout Margin="20" VerticalOptions="StartAndExpand">
+        <Label Text="Title" FontSize="Large" TextColor="Maroon"/>
+        <Label Text="{Binding Path=Title}" TextColor="Navy" FontSize="Medium"/>
+        
+         <Label Text="Location" FontSize="Large" TextColor="Maroon"/>
+         <Label Text = "{Binding Path= Location}" IsEnabled="false" TextColor ="Navy" FontSize="Medium"/>
+      
+         <Label Text="Category" FontSize="Large" TextColor="Maroon"/>
+         <Label Text = "{Binding Path= Category}" IsEnabled="false" TextColor="Navy" FontSize="Medium"/>
+        <!--<Label Text="Done" />-->
+       <!-- <Switch x:Name="doneSwitch" IsToggled="{Binding Path=Done}" />-->
+        <Label Text="Content" FontSize="Large" TextColor="Maroon"/>
+        <Label Text="{Binding Path= Content}" IsEnabled="false" VerticalOptions="FillAndExpand" TextColor="Navy" FontSize="Medium"/>
+        
+         <Button Text="All Issues" Clicked="AllIssuButton"/>
+        <Button Text="Home" Clicked="HomeButton"/>
+       <!-- <Button Text="Save" Clicked="OnSaveActivated" />
+        <Button Text="Delete" Clicked="OnDeleteActivated" />
+        <Button Text="Cancel" Clicked="OnCancelActivated" />-->
+       <!-- <Button Text="Speak" Clicked="OnSpeakActivated" />-->
+    </StackLayout>
+        
+        
+        
+    </ContentPage >
+

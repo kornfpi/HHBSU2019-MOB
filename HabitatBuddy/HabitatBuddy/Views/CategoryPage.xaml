@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HabitatBuddy.Views.CategoryPage"
+             Title="Categories">
+    <ContentPage.Content>
+        <StackLayout Margin="10,10,10,10">
+            <Label Text="All Action Plans sorted by category."
+                   HorizontalOptions="Center"
+                   FontAttributes="Bold"
+                   Margin="10,10"
+                   FontSize="Large"
+                   class="HorizontalRule"
+                   x:Name="MainLabel"/>
+            <ListView HasUnevenRows="True"
+                      Margin="10, 10"
+                      x:Name="categoryList"
+                      ItemTapped="CategoryList_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{ Binding title }" FontSize="Medium" FontAttributes="Bold" Margin="10, 5" TextColor="{ StaticResource GeneralTextColor }"/>
+                                <ListView IsVisible="{ Binding visible }" 
+                                          ItemsSource="{ Binding issues }" 
+                                          ItemTapped="ListView_ItemTapped"
+                                          HasUnevenRows="True"
+                                          HeightRequest="{ Binding sublistHeight }">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <Label Text="{Binding Title, StringFormat='  - {0}'}" FontSize="Medium" TextColor="#303030" Margin="10, 5"/>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

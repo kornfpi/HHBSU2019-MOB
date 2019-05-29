@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HabitatBuddy.App">
+             <!--xmlns:light="clr-namespace:Xamarin.Forms.Themes;assembly=Xamarin.Forms.Theme.Light"-->
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--Global Styles-->
+            <Color x:Key="SeparatorLineColor">#CCCCCC</Color>
+            <Color x:Key="iOSDefaultTintColor">#007aff</Color>
+            <Color x:Key="AndroidDefaultAccentColorColor">#C4D600</Color>
+            <Color x:Key="HabitatBlue">#00AFD7</Color>
+            <Color x:Key="HabitatGreen">#C4D600</Color>
+            <Color x:Key="GeneralTextColor">#404040</Color>
+            
+            <OnPlatform x:TypeArguments="Color" x:Key="AccentColor">
+                <On Platform="iOS" Value="{StaticResource iOSDefaultTintColor}" />
+                <!--<On Platform="Android" Value="{StaticResource AndroidDefaultAccentColorColor}" />-->
+            </OnPlatform>
+
+            <Style TargetType="ListView" Class="CategoryList">
+                <Setter Property="BackgroundColor" Value="{ StaticResource HabitatBlue }"/>
+            </Style>
+            
+            <Style TargetType="Label" Class="HorizontalRule">
+                <Setter Property="TextColor" Value="{ StaticResource GeneralTextColor }" />
+            </Style>
+
+            <Style TargetType="Button" Class="Rounded">
+                <Setter Property="BackgroundColor" Value="{ StaticResource HabitatBlue }" />
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="BorderRadius" Value="8"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="Margin" Value="5, 5"/>
+                <Setter Property="FontSize" Value="Large"/>
+            </Style>
+
+            <Style TargetType="Button" Class="RoundedLarge">
+                <Setter Property="BackgroundColor" Value="{ StaticResource HabitatBlue }" />
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="BorderRadius" Value="8"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="HeightRequest" Value="90"/>
+                <Setter Property="Margin" Value="5, 5"/>
+                <Setter Property="FontSize" Value="Large"/>
+            </Style>
+
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{ StaticResource HabitatGreen}"></Setter>
+                <Setter Property="BarTextColor" Value="White"></Setter>
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

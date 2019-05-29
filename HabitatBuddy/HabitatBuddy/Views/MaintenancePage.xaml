@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HabitatBuddy.Views.MaintenancePage"
+             Title="Scheduled Maintenance">
+    <ContentPage.Content>
+        <StackLayout Margin="10,10,10,10">
+            <Label Text="Routine home maintenance. Please complete by the due date."
+                HorizontalOptions="Center"
+                FontAttributes="Bold" 
+                FontSize="Large"
+                class="HorizontalRule"
+                x:Name="MainLabel" />
+            <ListView x:Name="ReminderList" ItemSelected="ReminderList_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding displayTitle}" Detail="{Binding recurrencePeriod, StringFormat='Every {0} days'}" TextColor="#404040" DetailColor="#808080"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Mark as Complete" Clicked="Complete_Clicked" class="Rounded" x:Name="CompleteButton"/>
+            <Button Text="View Action Plan" Clicked="View_Plan_Clicked" class="Rounded" x:Name="ViewPlanButton"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TodoREST.Views.IssueListPage" Title = "Issue">
+   <ContentPage.ToolbarItems>
+        
+        <ToolbarItem Text="+" Clicked = "HomeButton" >
+            
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+        <On Platform="Android, UWP" Value="plus.png" />
+    </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+     
+    <ListView x:Name="listView" Margin="30" ItemSelected="OnItemSelected">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                
+                <ViewCell>
+        
+                    
+                    <StackLayout Padding="20,0,0,0" HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                        <!-- <Image Source="check.png" IsVisible="{Binding Done}" />-->
+                        <Label Text="Issue: "  VerticalTextAlignment="Center" TextColor="Maroon" FontSize="Large"/>
+                        <Label Text="{Binding Title}" VerticalTextAlignment="Center" TextColor="Blue" FontSize="Large"/>
+                       
+                       
+                    </StackLayout>
+                     
+                </ViewCell>
+                
+            </DataTemplate>
+            
+        </ListView.ItemTemplate>
+    </ListView>
+    
+                       
+                       
+</ContentPage>

@@ -1,0 +1,31 @@
+﻿<Properties StartupConfiguration="{B0149761-A8E8-459C-9BC7-320F95644467}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
+  <MonoDevelop.Ide.ItemProperties.HabitatBuddy.Android AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" PreferredExecutionTarget="Android.my_device" />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="HabitatBuddy" expanded="True">
+            <Node name="HabitatBuddy" expanded="True">
+              <Node name="Data" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="IssueListPage.xaml" expanded="True">
+                  <Node name="IssueListPage.xaml.cs" selected="True" />
+                </Node>
+              </Node>
+              <Node name="App.xaml" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.HabitatBuddy.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.B39ECBA4-E7E8-4F9C-BC50-703EDCAAF81C" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/abdikarimmohamed/Projects/habitat-buddy/HabitatBuddy/HabitatBuddy/Views/IssueListPage.xaml" relfile="HabitatBuddy/HabitatBuddy/Views/IssueListPage.xaml" line="10" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

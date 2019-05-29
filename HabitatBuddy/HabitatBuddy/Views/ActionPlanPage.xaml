@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HabitatBuddy.Views.ActionPlanPage"
+             Title="Action Plan">
+    <ContentPage.Content>
+        <StackLayout Margin="10,10,10,10">
+            <!--<Label Text="Action Plan"
+                HorizontalOptions="Center"
+                FontAttributes="Bold"
+                   x:Name="TitleText"/>
+            <Label Text="Action Plan Content"
+                HorizontalOptions="StartAndExpand"
+                   x:Name="ContentText"/>-->
+            <Label x:Name="labelLoading" Text="Loading video..." IsVisible="false" HorizontalOptions="Center" />
+            <WebView HeightRequest="1000" WidthRequest="1000" Navigated="webviewNavigated" Navigating="webviewNavigating" x:Name="VideoView"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
