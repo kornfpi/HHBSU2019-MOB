@@ -12,5 +12,8 @@
     // use your machine's IP address
     public static string RestUrl = "https://habitatapp.azurewebsites.net/api/issue/{0}";
        public static string mUrl = "https://habitatapp.azurewebsites.net/api/maintenance/{0}";
+
+        // This is a test change to test GitHub from VS
+
     }
 }

@@ -678,24 +678,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\husky\\.nuget\\packages\\": {},
+    "C:\\Users\\Johnny2Bad\\.nuget\\packages\\": {},
+    "C:\\ProgramData\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\husky\\Source\\Repos\\habitat-buddy-3\\HabitatBuddy\\HabitatBuddy\\HabitatBuddy.csproj",
+      "projectUniqueName": "C:\\Users\\Johnny2Bad\\Documents\\GitHub\\HHBSU2019-MOB\\HabitatBuddy\\HabitatBuddy\\HabitatBuddy.csproj",
       "projectName": "HabitatBuddy",
-      "projectPath": "C:\\Users\\husky\\Source\\Repos\\habitat-buddy-3\\HabitatBuddy\\HabitatBuddy\\HabitatBuddy.csproj",
-      "packagesPath": "C:\\Users\\husky\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\husky\\Source\\Repos\\habitat-buddy-3\\HabitatBuddy\\HabitatBuddy\\obj\\",
+      "projectPath": "C:\\Users\\Johnny2Bad\\Documents\\GitHub\\HHBSU2019-MOB\\HabitatBuddy\\HabitatBuddy\\HabitatBuddy.csproj",
+      "packagesPath": "C:\\Users\\Johnny2Bad\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Johnny2Bad\\Documents\\GitHub\\HHBSU2019-MOB\\HabitatBuddy\\HabitatBuddy\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\ProgramData\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\husky\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Johnny2Bad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
