@@ -1181,21 +1181,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\husky\\.nuget\\packages\\": {}
+    "C:\\Users\\Johnny2Bad\\.nuget\\packages\\": {},
+    "C:\\ProgramData\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\husky\\Source\\Repos\\habitat-buddy-3\\HabitatBuddy\\HabitatBuddy.Android\\HabitatBuddy.Android.csproj",
+      "projectUniqueName": "C:\\Users\\Johnny2Bad\\Documents\\GitHub\\HHBSU2019-MOB\\HabitatBuddy\\HabitatBuddy.Android\\HabitatBuddy.Android.csproj",
       "projectName": "HabitatBuddy.Android",
-      "projectPath": "C:\\Users\\husky\\Source\\Repos\\habitat-buddy-3\\HabitatBuddy\\HabitatBuddy.Android\\HabitatBuddy.Android.csproj",
-      "packagesPath": "C:\\Users\\husky\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\husky\\Source\\Repos\\habitat-buddy-3\\HabitatBuddy\\HabitatBuddy.Android\\obj\\",
+      "projectPath": "C:\\Users\\Johnny2Bad\\Documents\\GitHub\\HHBSU2019-MOB\\HabitatBuddy\\HabitatBuddy.Android\\HabitatBuddy.Android.csproj",
+      "packagesPath": "C:\\Users\\Johnny2Bad\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Johnny2Bad\\Documents\\GitHub\\HHBSU2019-MOB\\HabitatBuddy\\HabitatBuddy.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
+      "fallbackFolders": [
+        "C:\\ProgramData\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\husky\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Johnny2Bad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "monoandroid81"
@@ -1207,8 +1212,8 @@
       "frameworks": {
         "monoandroid81": {
           "projectReferences": {
-            "C:\\Users\\husky\\Source\\Repos\\habitat-buddy-3\\HabitatBuddy\\HabitatBuddy\\HabitatBuddy.csproj": {
-              "projectPath": "C:\\Users\\husky\\Source\\Repos\\habitat-buddy-3\\HabitatBuddy\\HabitatBuddy\\HabitatBuddy.csproj"
+            "C:\\Users\\Johnny2Bad\\Documents\\GitHub\\HHBSU2019-MOB\\HabitatBuddy\\HabitatBuddy\\HabitatBuddy.csproj": {
+              "projectPath": "C:\\Users\\Johnny2Bad\\Documents\\GitHub\\HHBSU2019-MOB\\HabitatBuddy\\HabitatBuddy\\HabitatBuddy.csproj"
             }
           }
         }
