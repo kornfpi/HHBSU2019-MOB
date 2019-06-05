@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Johnny2Bad\\Documents\\GitHub\\HHBSU2019-MOB\\HabitatBuddy\\HabitatBuddy\\HabitatBuddy.csproj": {}
+    "C:\\Users\\knewo\\Projects\\CSE5911\\HHBSU2019-MOB\\HabitatBuddy\\HabitatBuddy\\HabitatBuddy.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Johnny2Bad\\Documents\\GitHub\\HHBSU2019-MOB\\HabitatBuddy\\HabitatBuddy\\HabitatBuddy.csproj": {
+    "C:\\Users\\knewo\\Projects\\CSE5911\\HHBSU2019-MOB\\HabitatBuddy\\HabitatBuddy\\HabitatBuddy.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Johnny2Bad\\Documents\\GitHub\\HHBSU2019-MOB\\HabitatBuddy\\HabitatBuddy\\HabitatBuddy.csproj",
+        "projectUniqueName": "C:\\Users\\knewo\\Projects\\CSE5911\\HHBSU2019-MOB\\HabitatBuddy\\HabitatBuddy\\HabitatBuddy.csproj",
         "projectName": "HabitatBuddy",
-        "projectPath": "C:\\Users\\Johnny2Bad\\Documents\\GitHub\\HHBSU2019-MOB\\HabitatBuddy\\HabitatBuddy\\HabitatBuddy.csproj",
-        "packagesPath": "C:\\Users\\Johnny2Bad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Johnny2Bad\\Documents\\GitHub\\HHBSU2019-MOB\\HabitatBuddy\\HabitatBuddy\\obj\\",
+        "projectPath": "C:\\Users\\knewo\\Projects\\CSE5911\\HHBSU2019-MOB\\HabitatBuddy\\HabitatBuddy\\HabitatBuddy.csproj",
+        "packagesPath": "C:\\Users\\knewo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\knewo\\Projects\\CSE5911\\HHBSU2019-MOB\\HabitatBuddy\\HabitatBuddy\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\ProgramData\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Johnny2Bad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\knewo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -55,7 +55,7 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[3.4.0.1008975, )"
+              "version": "[4.0.0.425677, )"
             },
             "Xamarin.Forms.Theme.Base": {
               "target": "Package",
