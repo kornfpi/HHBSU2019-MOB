@@ -1002,3 +1002,10 @@ C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy.Android\
 C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy.Android\obj\Debug\81\res\drawable\stoveoven40.png
 C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy.Android\obj\Debug\81\res\drawable\stoveoven70.png
 C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy.Android\obj\Debug\81\res\drawable\stoveoven.png
+C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy.Android\obj\Debug\81\res\drawable\bathroom70.png
+C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy.Android\obj\Debug\81\res\drawable\kitchen70.png
+C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy.Android\obj\Debug\81\res\drawable\wholehouse70.png
+C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy.Android\obj\Debug\81\res\drawable\bed70.png
+C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy.Android\obj\Debug\81\res\drawable\no70.png
+C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy.Android\obj\Debug\81\res\drawable\laundry70.png
+C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy.Android\obj\Debug\81\res\drawable\sofa70.png
