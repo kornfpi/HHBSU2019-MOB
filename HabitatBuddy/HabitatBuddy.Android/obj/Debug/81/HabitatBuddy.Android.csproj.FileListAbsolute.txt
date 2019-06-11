@@ -997,3 +997,8 @@ C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy.Android\
 C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy.Android\obj\Debug\81\android\assets\machine.config
 C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy.Android\obj\Debug\81\stamp\_CompileToDalvik.stamp
 C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy.Android\obj\Debug\81\stamp\_GeneratePackageManagerJava.stamp
+C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy.Android\obj\Debug\81\res\drawable\stoveoven50.png
+C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy.Android\obj\Debug\81\res\drawable\stoveoven60.png
+C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy.Android\obj\Debug\81\res\drawable\stoveoven40.png
+C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy.Android\obj\Debug\81\res\drawable\stoveoven70.png
+C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy.Android\obj\Debug\81\res\drawable\stoveoven.png

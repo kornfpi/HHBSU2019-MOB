@@ -4954,8 +4954,23 @@ namespace HabitatBuddy.Droid
 			// aapt resource value: 0x7F09000C
 			public const int notify_panel_notification_icon_bg = 2131296268;
 			
+			// aapt resource value: 0x7F010008
+			public const int plugin_lc_smallicon = 2130771976;
+			
+			// aapt resource value: 0x7F010002
+			public const int stoveoven = 2130771970;
+			
 			// aapt resource value: 0x7F010003
-			public const int plugin_lc_smallicon = 2130771971;
+			public const int stoveoven40 = 2130771971;
+			
+			// aapt resource value: 0x7F010004
+			public const int stoveoven50 = 2130771972;
+			
+			// aapt resource value: 0x7F010005
+			public const int stoveoven60 = 2130771973;
+			
+			// aapt resource value: 0x7F010006
+			public const int stoveoven70 = 2130771974;
 			
 			// aapt resource value: 0x7F090069
 			public const int tooltip_frame_dark = 2131296361;
@@ -4963,8 +4978,8 @@ namespace HabitatBuddy.Droid
 			// aapt resource value: 0x7F09006A
 			public const int tooltip_frame_light = 2131296362;
 			
-			// aapt resource value: 0x7F010002
-			public const int xamarin_logo = 2130771970;
+			// aapt resource value: 0x7F010007
+			public const int xamarin_logo = 2130771975;
 			
 			static Drawable()
 			{
