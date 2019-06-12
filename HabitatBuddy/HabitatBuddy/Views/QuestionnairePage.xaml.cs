@@ -55,6 +55,25 @@ namespace HabitatBuddy.Views
                 while(i < tree.getNumChildren()) {
                     tree.moveToChild(i);
                     answerButtons[i].Text = tree.getAnswerText();
+                    try {
+                        //if (i == 1) {
+                            answerButtons[i].ImageSource = tree.getIcon();
+                            //answerButtons[i].ImageSource = new FileImageSource
+                            //{
+                            //    File = "no70.png"
+                            //};
+
+                        //}
+                        //answerButtons[i].Text = "TEST";
+                        //answerButtons[i].ImageSource = tree.getIcon();
+                        //answerButtons[i].
+                        Console.WriteLine("GOOD| " + i + ": " + tree.getIcon());
+                    }
+                    catch
+                    {
+                        Console.WriteLine("BAD| " + i);
+                    }
+                    //answerButtons[i].ImageSource = "stoveoven70.png";
                     tree.moveToParent();
                     i++;
                 }
@@ -63,6 +82,7 @@ namespace HabitatBuddy.Views
                     answerButtons[i].IsVisible = false; //Hide any buttons that aren't needed
                     i++;
                 }
+                //answerButtons[0].ImageSource = "no70.png";
             }
         }
 

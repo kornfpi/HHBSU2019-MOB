@@ -22,12 +22,13 @@ namespace HabitatBuddy.Models {
             }
         }
 
-        public void addChild(string questionText, string answerText,TodoREST.HomeIssue actionPlan) {
+        public void addChild(string questionText, string answerText, TodoREST.HomeIssue actionPlan, string icon) {
             DecisionTreeNode child = new DecisionTreeNode();
             child.parent = cursor;
             child.questionText = questionText;
             child.answerText = answerText;
             child.actionPlan = actionPlan;
+            child.icon = icon;
             cursor.children.Add(child);
         }
 
@@ -45,6 +46,10 @@ namespace HabitatBuddy.Models {
 
         public TodoREST.HomeIssue getActionPlan() {
             return cursor.actionPlan;
+        }
+
+        public String getIcon() {
+            return cursor.icon;
         }
     }
 }

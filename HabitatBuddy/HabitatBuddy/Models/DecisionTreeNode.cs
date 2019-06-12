@@ -12,6 +12,7 @@ namespace HabitatBuddy.Models
         public string answerText;
         public bool isRoot;
         public TodoREST.HomeIssue actionPlan;
+        public string icon;
 
         public DecisionTreeNode() {
             parent = null;
@@ -20,6 +21,7 @@ namespace HabitatBuddy.Models
             answerText = "blank answer";
             actionPlan = null;
             isRoot = false;
+            icon = "no70.png";
         }
 
     }
