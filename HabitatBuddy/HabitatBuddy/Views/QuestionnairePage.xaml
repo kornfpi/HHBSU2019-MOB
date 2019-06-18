@@ -28,20 +28,7 @@
                     FontSize="Large"
                     class="HorizontalRule"
                     x:Name="QuestionPrompt"/>
-                <!--
-                <Button Grid.Row="1" Grid.Column ="0" Text="Answer 1" Image ="stoveoven70.png" ContentLayout="Top,0" HorizontalOptions="CenterAndExpand" Clicked="Answer_1_Button_Clicked" x:Name="answer_button_1" class="Rounded"/>
-                <Button Grid.Row="1" Grid.Column ="1" Text="Answer 2" Image ="stoveoven70.png" ContentLayout="Top,0" Clicked="Answer_2_Button_Clicked" x:Name="answer_button_2" class="Rounded"/>
-                -->
-                <!--
-                <Button Grid.Row="1" Grid.Column ="0" Text="Answer 1" Image ="stoveoven70.png" HeightRequest="150" ContentLayout="Top,0" VerticalOptions="FillAndExpand" Clicked="Answer_1_Button_Clicked" x:Name="answer_button_1" class="Rounded"/>
-                <Button Grid.Row="1" Grid.Column ="1" Text="Answer 2" Image ="bathroom70.png" HeightRequest="150" ContentLayout="Top,0" VerticalOptions="FillAndExpand" Clicked="Answer_2_Button_Clicked" x:Name="answer_button_2" class="Rounded"/>
-                <Button Grid.Row="2" Grid.Column ="0" Text="Answer 3" Image ="bed70.png" HeightRequest="150" ContentLayout="Top,0" VerticalOptions="FillAndExpand" Clicked="Answer_3_Button_Clicked" x:Name="answer_button_3" class="Rounded"/>
-                <Button Grid.Row="2" Grid.Column ="1" Text="Answer 4" Image ="sofa70.png" HeightRequest="150" ContentLayout="Top,0" VerticalOptions="FillAndExpand" Clicked="Answer_4_Button_Clicked" x:Name="answer_button_4" class="Rounded"/>
-                <Button Grid.Row="3" Grid.Column ="0" Text="Answer 5" Image ="laundry70.png" HeightRequest="150" ContentLayout="Top,0" VerticalOptions="FillAndExpand" Clicked="Answer_5_Button_Clicked" x:Name="answer_button_5" class="Rounded"/>
-                <Button Grid.Row="3" Grid.Column ="1" Text="Answer 6" Image ="wholehouse70.png" HeightRequest="150" ContentLayout="Top,0" VerticalOptions="FillAndExpand" Clicked="Answer_6_Button_Clicked" x:Name="answer_button_6" class="Rounded"/>
-                <Button Grid.Row="4" Grid.Column ="0" Text="Answer 7" Image ="no70.png" HeightRequest="150" ContentLayout="Top,0" VerticalOptions="FillAndExpand" Clicked="Answer_7_Button_Clicked" x:Name="answer_button_7" class="Rounded"/>
-                <Button Grid.Row="4" Grid.Column ="1" Text="Answer 8" Image ="no70.png" HeightRequest="150" ContentLayout="Top,0" VerticalOptions="FillAndExpand" Clicked="Answer_8_Button_Clicked" x:Name="answer_button_8" class="Rounded"/>
-                -->
+ 
                 <Button Grid.Row="1" Grid.Column ="0" Text="Answer 1" ImageSource="stoveoven70.png" HeightRequest="150" ContentLayout="Top,0" VerticalOptions="FillAndExpand" Clicked="Answer_1_Button_Clicked" x:Name="answer_button_1" class="Rounded"/>
                 <Button Grid.Row="1" Grid.Column ="1" Text="Answer 2" ImageSource="bathroom70.png" HeightRequest="150" ContentLayout="Top,0" VerticalOptions="FillAndExpand" Clicked="Answer_2_Button_Clicked" x:Name="answer_button_2" class="Rounded"/>
                 <Button Grid.Row="2" Grid.Column ="0" Text="Answer 3" ImageSource="bed70.png" HeightRequest="150" ContentLayout="Top,0" VerticalOptions="FillAndExpand" Clicked="Answer_3_Button_Clicked" x:Name="answer_button_3" class="Rounded"/>

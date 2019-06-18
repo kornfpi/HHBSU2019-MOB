@@ -56,17 +56,7 @@ namespace HabitatBuddy.Views
                     tree.moveToChild(i);
                     answerButtons[i].Text = tree.getAnswerText();
                     try {
-                        //if (i == 1) {
-                            answerButtons[i].ImageSource = tree.getIcon();
-                            //answerButtons[i].ImageSource = new FileImageSource
-                            //{
-                            //    File = "no70.png"
-                            //};
-
-                        //}
-                        //answerButtons[i].Text = "TEST";
-                        //answerButtons[i].ImageSource = tree.getIcon();
-                        //answerButtons[i].
+                        answerButtons[i].ImageSource = tree.getIcon();
                         Console.WriteLine("GOOD| " + i + ": " + tree.getIcon());
                     }
                     catch

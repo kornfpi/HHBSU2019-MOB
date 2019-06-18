@@ -99,12 +99,6 @@ C:\Users\Johnny2Bad\Documents\GitHub\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy\obj
 C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy\bin\Debug\netstandard2.0\HabitatBuddy.deps.json
 C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy\bin\Debug\netstandard2.0\HabitatBuddy.dll
 C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy\bin\Debug\netstandard2.0\HabitatBuddy.pdb
-C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy\obj\Debug\netstandard2.0\HabitatBuddy.csprojAssemblyReference.cache
-C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy\obj\Debug\netstandard2.0\HabitatBuddy.csproj.CoreCompileInputs.cache
-C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy\obj\Debug\netstandard2.0\HabitatBuddy.AssemblyInfoInputs.cache
-C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy\obj\Debug\netstandard2.0\HabitatBuddy.AssemblyInfo.cs
-C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy\obj\Debug\netstandard2.0\HabitatBuddy.dll
-C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy\obj\Debug\netstandard2.0\HabitatBuddy.pdb
 C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy\obj\Debug\netstandard2.0\Views\ActionPlanPage.xaml.g.cs
 C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy\obj\Debug\netstandard2.0\Views\CategoryPage.xaml.g.cs
@@ -113,4 +107,9 @@ C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy\obj\Debu
 C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy\obj\Debug\netstandard2.0\Views\MaintenancePage.xaml.g.cs
 C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy\obj\Debug\netstandard2.0\Views\OneIssuePage.xaml.g.cs
 C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy\obj\Debug\netstandard2.0\Views\QuestionnairePage.xaml.g.cs
+C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy\obj\Debug\netstandard2.0\HabitatBuddy.csproj.CoreCompileInputs.cache
+C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy\obj\Debug\netstandard2.0\HabitatBuddy.AssemblyInfoInputs.cache
+C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy\obj\Debug\netstandard2.0\HabitatBuddy.AssemblyInfo.cs
 C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy\obj\Debug\netstandard2.0\HabitatBuddy.dll
+C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy\obj\Debug\netstandard2.0\HabitatBuddy.pdb

@@ -278,7 +278,6 @@ C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy.iOS\bin\
 C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Theme.Light.dll
 C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy.iOS\bin\iPhoneSimulator\Debug\HabitatBuddy.dll
 C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy.iOS\bin\iPhoneSimulator\Debug\HabitatBuddy.pdb
-C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy.iOS\bin\iPhoneSimulator\Debug\HabitatBuddy.dll.mdb
 C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy.iOS\obj\iPhoneSimulator\Debug\ibtool\_BundleResourceWithLogicalName.items
 C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy.iOS\obj\iPhoneSimulator\Debug\actool\_PartialAppManifest.items
 C:\Users\knewo\Projects\CSE5911\HHBSU2019-MOB\HabitatBuddy\HabitatBuddy.iOS\obj\iPhoneSimulator\Debug\actool\_BundleResourceWithLogicalName.items
