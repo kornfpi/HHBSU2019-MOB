@@ -4,6 +4,9 @@
              x:Class="HabitatBuddy.MainPage"
              Title="Homeowner Buddy">
     <StackLayout Margin="10,10,10,10">
+
+        <Label x:Name="Lbl_NoInternet" HorizontalTextAlignment="Center" FontAttributes ="Bold" TextColor="white" BackgroundColor="Red" />
+
         <Label Text="Loading..." 
                HorizontalOptions="Center"
                FontAttributes="Bold"
@@ -11,16 +14,22 @@
                FontSize="Medium" 
                TextColor="{StaticResource HabitatBlue}"
                x:Name="LoadingLabel"/>
-        <Label Text="Welcome to the Homeowner Buddy"
+        <Label Text="Welcome to the Homeowner Buddy (Unregistered)"
                HorizontalOptions="Center"
                FontAttributes="Bold"
                Margin="20,10"
                FontSize="Large"
                class="HorizontalRule"
                x:Name="MainLabel"/>
+
+        <Button Text="Register App" Clicked="appRegistered" class="RoundedLarge" x:Name="RegButton"/>
+        <!--<Button Text="Check Internet Connection" Clicked="checkConn" class="RoundedLarge" x:Name="ConButton"/>-->
         <Button Text="Help Me Diagnose an Issue" Clicked="Diagnose_Button_Clicked" class="RoundedLarge" x:Name="AskButton"/>
         <Button Text="Category Search" Clicked="Category_Button_Clicked" class="RoundedLarge" x:Name="CategoryButton"/>
         <Button Text="Maintenance Reminders" Clicked="Reminder_Button_Clicked" class="Rounded" x:Name="ReminderButton"/>
+
+
+
         <Button Text="All Issues " Clicked="AllIssueButton" class="Rounded" IsVisible="False" x:Name="ShowAllIssueButton"/>
     </StackLayout>
 </ContentPage>

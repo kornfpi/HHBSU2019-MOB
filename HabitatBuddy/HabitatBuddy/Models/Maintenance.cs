@@ -9,5 +9,12 @@ namespace HabitatBuddy.Models
         public int RecurrencePeriod { get; set; }
 
         public int ActionPlanId { get; set; }
+
+
+        //-------------------- Change here
+        public string homecode { get; set; }
+
+        // -----------------------
+
     }
 }

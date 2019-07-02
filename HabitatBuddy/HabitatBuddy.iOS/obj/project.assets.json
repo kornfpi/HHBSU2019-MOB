@@ -11,13 +11,13 @@
           "lib/Xamarin.iOS10/ModernHttpClient.dll": {}
         }
       },
-      "Newtonsoft.Json/6.0.4": {
+      "Newtonsoft.Json/12.0.2": {
         "type": "package",
         "compile": {
-          "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll": {}
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         },
         "runtime": {
-          "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll": {}
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
       "sqlite-net-pcl/1.6.258-beta": {
@@ -66,6 +66,20 @@
         },
         "runtime": {
           "lib/Xamarin.iOS10/SQLitePCLRaw.provider.sqlite3.dll": {}
+        }
+      },
+      "Xam.Plugin.Connectivity/4.0.0.190-beta": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.SimplePing": "1.4.0"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.dll": {},
+          "lib/Xamarin.iOS10/Plugin.Connectivity.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.dll": {},
+          "lib/Xamarin.iOS10/Plugin.Connectivity.dll": {}
         }
       },
       "Xam.Plugins.Notifier/3.0.1": {
@@ -243,12 +257,23 @@
           "lib/Xamarin.iOS10/Xamarin.Forms.Theme.Light.dll": {}
         }
       },
+      "Xamarin.SimplePing/1.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/XamariniOS10/Xamarin.SimplePing.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/XamariniOS10/Xamarin.SimplePing.iOS.dll": {}
+        }
+      },
       "HabitatBuddy/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Newtonsoft.Json": "12.0.2",
+          "Xam.Plugin.Connectivity": "4.0.0.190-beta",
           "Xam.Plugins.Notifier": "3.0.1",
-          "Xamarin.Forms": "3.4.0.1008975",
+          "Xamarin.Forms": "4.0.0.425677",
           "Xamarin.Forms.Theme.Base": "1.0.0.43-pre1",
           "Xamarin.Forms.Theme.Light": "1.0.0.43-pre1",
           "sqlite-net-pcl": "1.6.258-beta"
@@ -271,13 +296,13 @@
           "lib/Xamarin.iOS10/ModernHttpClient.dll": {}
         }
       },
-      "Newtonsoft.Json/6.0.4": {
+      "Newtonsoft.Json/12.0.2": {
         "type": "package",
         "compile": {
-          "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll": {}
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         },
         "runtime": {
-          "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll": {}
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
       "sqlite-net-pcl/1.6.258-beta": {
@@ -326,6 +351,20 @@
         },
         "runtime": {
           "lib/Xamarin.iOS10/SQLitePCLRaw.provider.sqlite3.dll": {}
+        }
+      },
+      "Xam.Plugin.Connectivity/4.0.0.190-beta": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.SimplePing": "1.4.0"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.dll": {},
+          "lib/Xamarin.iOS10/Plugin.Connectivity.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.dll": {},
+          "lib/Xamarin.iOS10/Plugin.Connectivity.dll": {}
         }
       },
       "Xam.Plugins.Notifier/3.0.1": {
@@ -503,12 +542,23 @@
           "lib/Xamarin.iOS10/Xamarin.Forms.Theme.Light.dll": {}
         }
       },
+      "Xamarin.SimplePing/1.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/XamariniOS10/Xamarin.SimplePing.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/XamariniOS10/Xamarin.SimplePing.iOS.dll": {}
+        }
+      },
       "HabitatBuddy/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Newtonsoft.Json": "12.0.2",
+          "Xam.Plugin.Connectivity": "4.0.0.190-beta",
           "Xam.Plugins.Notifier": "3.0.1",
-          "Xamarin.Forms": "3.4.0.1008975",
+          "Xamarin.Forms": "4.0.0.425677",
           "Xamarin.Forms.Theme.Base": "1.0.0.43-pre1",
           "Xamarin.Forms.Theme.Light": "1.0.0.43-pre1",
           "sqlite-net-pcl": "1.6.258-beta"
@@ -531,13 +581,13 @@
           "lib/Xamarin.iOS10/ModernHttpClient.dll": {}
         }
       },
-      "Newtonsoft.Json/6.0.4": {
+      "Newtonsoft.Json/12.0.2": {
         "type": "package",
         "compile": {
-          "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll": {}
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         },
         "runtime": {
-          "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll": {}
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
       "sqlite-net-pcl/1.6.258-beta": {
@@ -586,6 +636,20 @@
         },
         "runtime": {
           "lib/Xamarin.iOS10/SQLitePCLRaw.provider.sqlite3.dll": {}
+        }
+      },
+      "Xam.Plugin.Connectivity/4.0.0.190-beta": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.SimplePing": "1.4.0"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.dll": {},
+          "lib/Xamarin.iOS10/Plugin.Connectivity.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.dll": {},
+          "lib/Xamarin.iOS10/Plugin.Connectivity.dll": {}
         }
       },
       "Xam.Plugins.Notifier/3.0.1": {
@@ -763,12 +827,23 @@
           "lib/Xamarin.iOS10/Xamarin.Forms.Theme.Light.dll": {}
         }
       },
+      "Xamarin.SimplePing/1.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/XamariniOS10/Xamarin.SimplePing.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/XamariniOS10/Xamarin.SimplePing.iOS.dll": {}
+        }
+      },
       "HabitatBuddy/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Newtonsoft.Json": "12.0.2",
+          "Xam.Plugin.Connectivity": "4.0.0.190-beta",
           "Xam.Plugins.Notifier": "3.0.1",
-          "Xamarin.Forms": "3.4.0.1008975",
+          "Xamarin.Forms": "4.0.0.425677",
           "Xamarin.Forms.Theme.Base": "1.0.0.43-pre1",
           "Xamarin.Forms.Theme.Light": "1.0.0.43-pre1",
           "sqlite-net-pcl": "1.6.258-beta"
@@ -791,13 +866,13 @@
           "lib/Xamarin.iOS10/ModernHttpClient.dll": {}
         }
       },
-      "Newtonsoft.Json/6.0.4": {
+      "Newtonsoft.Json/12.0.2": {
         "type": "package",
         "compile": {
-          "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll": {}
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         },
         "runtime": {
-          "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll": {}
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
       "sqlite-net-pcl/1.6.258-beta": {
@@ -846,6 +921,20 @@
         },
         "runtime": {
           "lib/Xamarin.iOS10/SQLitePCLRaw.provider.sqlite3.dll": {}
+        }
+      },
+      "Xam.Plugin.Connectivity/4.0.0.190-beta": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.SimplePing": "1.4.0"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.dll": {},
+          "lib/Xamarin.iOS10/Plugin.Connectivity.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.dll": {},
+          "lib/Xamarin.iOS10/Plugin.Connectivity.dll": {}
         }
       },
       "Xam.Plugins.Notifier/3.0.1": {
@@ -1023,12 +1112,23 @@
           "lib/Xamarin.iOS10/Xamarin.Forms.Theme.Light.dll": {}
         }
       },
+      "Xamarin.SimplePing/1.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/XamariniOS10/Xamarin.SimplePing.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/XamariniOS10/Xamarin.SimplePing.iOS.dll": {}
+        }
+      },
       "HabitatBuddy/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Newtonsoft.Json": "12.0.2",
+          "Xam.Plugin.Connectivity": "4.0.0.190-beta",
           "Xam.Plugins.Notifier": "3.0.1",
-          "Xamarin.Forms": "3.4.0.1008975",
+          "Xamarin.Forms": "4.0.0.425677",
           "Xamarin.Forms.Theme.Base": "1.0.0.43-pre1",
           "Xamarin.Forms.Theme.Light": "1.0.0.43-pre1",
           "sqlite-net-pcl": "1.6.258-beta"
@@ -1065,14 +1165,14 @@
         "modernhttpclient.nuspec"
       ]
     },
-    "Newtonsoft.Json/6.0.4": {
-      "sha512": "FyQLmEpjsCrEP+znauLDGAi+h6i9YnaMkITlfIoiM4RYyX3nki306bTHsr/0okiIvIc7BJhQTbOAIZVocccFUw==",
+    "Newtonsoft.Json/12.0.2": {
+      "sha512": "rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
       "type": "package",
-      "path": "newtonsoft.json/6.0.4",
-      "hasTools": true,
+      "path": "newtonsoft.json/12.0.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "LICENSE.md",
         "lib/net20/Newtonsoft.Json.dll",
         "lib/net20/Newtonsoft.Json.xml",
         "lib/net35/Newtonsoft.Json.dll",
@@ -1081,15 +1181,18 @@
         "lib/net40/Newtonsoft.Json.xml",
         "lib/net45/Newtonsoft.Json.dll",
         "lib/net45/Newtonsoft.Json.xml",
-        "lib/netcore45/Newtonsoft.Json.dll",
-        "lib/netcore45/Newtonsoft.Json.xml",
-        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.dll",
-        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.xml",
-        "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll",
-        "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.xml",
-        "newtonsoft.json.6.0.4.nupkg.sha512",
-        "newtonsoft.json.nuspec",
-        "tools/install.ps1"
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.12.0.2.nupkg.sha512",
+        "newtonsoft.json.nuspec"
       ]
     },
     "sqlite-net-pcl/1.6.258-beta": {
@@ -1191,6 +1294,73 @@
         "lib/Xamarin.iOS10/SQLitePCLRaw.provider.sqlite3.dll",
         "sqlitepclraw.provider.sqlite3.ios_unified.1.1.13.nupkg.sha512",
         "sqlitepclraw.provider.sqlite3.ios_unified.nuspec"
+      ]
+    },
+    "Xam.Plugin.Connectivity/4.0.0.190-beta": {
+      "sha512": "p9PofTKArw6wHg45GpRRE+xDioJGOSAgA+X+E+vUf1CFZmTzeOO3YCmFdP7/W8x6f85Z50zugXGoszEGJx4QSg==",
+      "type": "package",
+      "path": "xam.plugin.connectivity/4.0.0.190-beta",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Plugin.Connectivity.Abstractions.dll",
+        "lib/MonoAndroid10/Plugin.Connectivity.Abstractions.pdb",
+        "lib/MonoAndroid10/Plugin.Connectivity.Abstractions.xml",
+        "lib/MonoAndroid10/Plugin.Connectivity.dll",
+        "lib/MonoAndroid10/Plugin.Connectivity.pdb",
+        "lib/MonoAndroid10/Plugin.Connectivity.xml",
+        "lib/UAP10/Plugin.Connectivity.Abstractions.dll",
+        "lib/UAP10/Plugin.Connectivity.Abstractions.pdb",
+        "lib/UAP10/Plugin.Connectivity.Abstractions.xml",
+        "lib/UAP10/Plugin.Connectivity.XML",
+        "lib/UAP10/Plugin.Connectivity.dll",
+        "lib/UAP10/Plugin.Connectivity.pdb",
+        "lib/UAP10/Plugin.Connectivity.pri",
+        "lib/UAP10/Plugin.Connectivity/Properties/Plugin.Connectivity.rd.xml",
+        "lib/Xamarin.Mac20/Plugin.Connectivity.Abstractions.dll",
+        "lib/Xamarin.Mac20/Plugin.Connectivity.Abstractions.pdb",
+        "lib/Xamarin.Mac20/Plugin.Connectivity.Abstractions.xml",
+        "lib/Xamarin.Mac20/Plugin.Connectivity.dll",
+        "lib/Xamarin.Mac20/Plugin.Connectivity.pdb",
+        "lib/Xamarin.Mac20/Plugin.Connectivity.xml",
+        "lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.dll",
+        "lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.pdb",
+        "lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.xml",
+        "lib/Xamarin.iOS10/Plugin.Connectivity.dll",
+        "lib/Xamarin.iOS10/Plugin.Connectivity.pdb",
+        "lib/Xamarin.iOS10/Plugin.Connectivity.xml",
+        "lib/XamarinTVOS/Plugin.Connectivity.Abstractions.dll",
+        "lib/XamarinTVOS/Plugin.Connectivity.Abstractions.pdb",
+        "lib/XamarinTVOS/Plugin.Connectivity.Abstractions.xml",
+        "lib/XamarinTVOS/Plugin.Connectivity.dll",
+        "lib/XamarinTVOS/Plugin.Connectivity.pdb",
+        "lib/XamarinTVOS/Plugin.Connectivity.xml",
+        "lib/net45/Plugin.Connectivity.Abstractions.dll",
+        "lib/net45/Plugin.Connectivity.Abstractions.pdb",
+        "lib/net45/Plugin.Connectivity.Abstractions.xml",
+        "lib/net45/Plugin.Connectivity.XML",
+        "lib/net45/Plugin.Connectivity.dll",
+        "lib/net45/Plugin.Connectivity.pdb",
+        "lib/netcoreapp2.0/Plugin.Connectivity.Abstractions.dll",
+        "lib/netcoreapp2.0/Plugin.Connectivity.Abstractions.pdb",
+        "lib/netcoreapp2.0/Plugin.Connectivity.Abstractions.xml",
+        "lib/netcoreapp2.0/Plugin.Connectivity.deps.json",
+        "lib/netcoreapp2.0/Plugin.Connectivity.dll",
+        "lib/netcoreapp2.0/Plugin.Connectivity.xml",
+        "lib/netstandard1.0/Plugin.Connectivity.Abstractions.dll",
+        "lib/netstandard1.0/Plugin.Connectivity.Abstractions.pdb",
+        "lib/netstandard1.0/Plugin.Connectivity.Abstractions.xml",
+        "lib/netstandard1.0/Plugin.Connectivity.deps.json",
+        "lib/netstandard1.0/Plugin.Connectivity.dll",
+        "lib/netstandard1.0/Plugin.Connectivity.pdb",
+        "lib/netstandard1.0/Plugin.Connectivity.xml",
+        "lib/tizen40/Plugin.Connectivity.Abstractions.dll",
+        "lib/tizen40/Plugin.Connectivity.Abstractions.pdb",
+        "lib/tizen40/Plugin.Connectivity.Abstractions.xml",
+        "lib/tizen40/Plugin.Connectivity.deps.json",
+        "lib/tizen40/Plugin.Connectivity.dll",
+        "xam.plugin.connectivity.4.0.0.190-beta.nupkg.sha512",
+        "xam.plugin.connectivity.nuspec"
       ]
     },
     "Xam.Plugins.Notifier/3.0.1": {
@@ -1424,6 +1594,20 @@
         "xamarin.forms.theme.light.nuspec"
       ]
     },
+    "Xamarin.SimplePing/1.4.0": {
+      "sha512": "L00a5GlowQZxI3yyvCo7clpA1s96eQ0MGgwFphB8azpUBn2TwPkFQGo1UTu6So2IuhIdwz9I61f1WF0XLQn95A==",
+      "type": "package",
+      "path": "xamarin.simpleping/1.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "THIRD-PARTY-NOTICES.txt",
+        "lib/XamarinMac20/Xamarin.SimplePing.Mac.dll",
+        "lib/XamariniOS10/Xamarin.SimplePing.iOS.dll",
+        "xamarin.simpleping.1.4.0.nupkg.sha512",
+        "xamarin.simpleping.nuspec"
+      ]
+    },
     "HabitatBuddy/1.0.0": {
       "type": "project",
       "path": "../HabitatBuddy/HabitatBuddy.csproj",
@@ -1433,6 +1617,8 @@
   "projectFileDependencyGroups": {
     "Xamarin.iOS,Version=v1.0": [
       "HabitatBuddy >= 1.0.0",
+      "Newtonsoft.Json >= 12.0.2",
+      "Xam.Plugin.Connectivity >= 4.0.0.190-beta",
       "Xam.Plugins.Notifier >= 3.0.1",
       "Xamarin.Forms >= 3.4.0.1008975",
       "sqlite-net-pcl >= 1.6.258-beta"
@@ -1445,11 +1631,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Johnny2Bad\\Documents\\GitHub\\HHBSU2019-MOB\\HabitatBuddy\\HabitatBuddy.iOS\\HabitatBuddy.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\Johnny2Bad\\Desktop\\Current - MOB\\HabitatBuddy\\HabitatBuddy.iOS\\HabitatBuddy.iOS.csproj",
       "projectName": "HabitatBuddy.iOS",
-      "projectPath": "C:\\Users\\Johnny2Bad\\Documents\\GitHub\\HHBSU2019-MOB\\HabitatBuddy\\HabitatBuddy.iOS\\HabitatBuddy.iOS.csproj",
+      "projectPath": "C:\\Users\\Johnny2Bad\\Desktop\\Current - MOB\\HabitatBuddy\\HabitatBuddy.iOS\\HabitatBuddy.iOS.csproj",
       "packagesPath": "C:\\Users\\Johnny2Bad\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Johnny2Bad\\Documents\\GitHub\\HHBSU2019-MOB\\HabitatBuddy\\HabitatBuddy.iOS\\obj\\",
+      "outputPath": "C:\\Users\\Johnny2Bad\\Desktop\\Current - MOB\\HabitatBuddy\\HabitatBuddy.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1470,8 +1656,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\Johnny2Bad\\Documents\\GitHub\\HHBSU2019-MOB\\HabitatBuddy\\HabitatBuddy\\HabitatBuddy.csproj": {
-              "projectPath": "C:\\Users\\Johnny2Bad\\Documents\\GitHub\\HHBSU2019-MOB\\HabitatBuddy\\HabitatBuddy\\HabitatBuddy.csproj"
+            "C:\\Users\\Johnny2Bad\\Desktop\\Current - MOB\\HabitatBuddy\\HabitatBuddy\\HabitatBuddy.csproj": {
+              "projectPath": "C:\\Users\\Johnny2Bad\\Desktop\\Current - MOB\\HabitatBuddy\\HabitatBuddy\\HabitatBuddy.csproj"
             }
           }
         }
@@ -1480,6 +1666,14 @@
     "frameworks": {
       "xamarinios10": {
         "dependencies": {
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[12.0.2, )"
+          },
+          "Xam.Plugin.Connectivity": {
+            "target": "Package",
+            "version": "[4.0.0.190-beta, )"
+          },
           "Xam.Plugins.Notifier": {
             "target": "Package",
             "version": "[3.0.1, )"
@@ -1506,5 +1700,20 @@
         "#import": []
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: Xamarin.Forms from 4.0.0.425677 to 3.4.0.1008975. Reference the package directly from the project to select a different version. \r\n HabitatBuddy.iOS -> HabitatBuddy -> Xamarin.Forms (>= 4.0.0.425677) \r\n HabitatBuddy.iOS -> Xamarin.Forms (>= 3.4.0.1008975)",
+      "libraryId": "Xamarin.Forms",
+      "targetGraphs": [
+        "Xamarin.iOS,Version=v1.0",
+        "Xamarin.iOS,Version=v1.0/win",
+        "Xamarin.iOS,Version=v1.0/win-x64",
+        "Xamarin.iOS,Version=v1.0/win-x86"
+      ]
+    }
+  ]
 }

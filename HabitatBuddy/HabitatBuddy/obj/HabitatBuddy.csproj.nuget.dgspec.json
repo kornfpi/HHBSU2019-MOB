@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Johnny2Bad\\Documents\\GitHub\\HHBSU2019-MOB\\HabitatBuddy\\HabitatBuddy\\HabitatBuddy.csproj": {}
+    "C:\\Users\\Johnny2Bad\\Desktop\\Current - MOB\\HabitatBuddy\\HabitatBuddy\\HabitatBuddy.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Johnny2Bad\\Documents\\GitHub\\HHBSU2019-MOB\\HabitatBuddy\\HabitatBuddy\\HabitatBuddy.csproj": {
+    "C:\\Users\\Johnny2Bad\\Desktop\\Current - MOB\\HabitatBuddy\\HabitatBuddy\\HabitatBuddy.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Johnny2Bad\\Documents\\GitHub\\HHBSU2019-MOB\\HabitatBuddy\\HabitatBuddy\\HabitatBuddy.csproj",
+        "projectUniqueName": "C:\\Users\\Johnny2Bad\\Desktop\\Current - MOB\\HabitatBuddy\\HabitatBuddy\\HabitatBuddy.csproj",
         "projectName": "HabitatBuddy",
-        "projectPath": "C:\\Users\\Johnny2Bad\\Documents\\GitHub\\HHBSU2019-MOB\\HabitatBuddy\\HabitatBuddy\\HabitatBuddy.csproj",
+        "projectPath": "C:\\Users\\Johnny2Bad\\Desktop\\Current - MOB\\HabitatBuddy\\HabitatBuddy\\HabitatBuddy.csproj",
         "packagesPath": "C:\\Users\\Johnny2Bad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Johnny2Bad\\Documents\\GitHub\\HHBSU2019-MOB\\HabitatBuddy\\HabitatBuddy\\obj\\",
+        "outputPath": "C:\\Users\\Johnny2Bad\\Desktop\\Current - MOB\\HabitatBuddy\\HabitatBuddy\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\ProgramData\\Xamarin\\NuGet\\",
@@ -35,6 +35,10 @@
           }
         },
         "warningProperties": {
+          "noWarn": [
+            "NU1701",
+            "NU1702"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -49,13 +53,21 @@
               "version": "[2.0.3, )",
               "autoReferenced": true
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.2, )"
+            },
+            "Xam.Plugin.Connectivity": {
+              "target": "Package",
+              "version": "[4.0.0.190-beta, )"
+            },
             "Xam.Plugins.Notifier": {
               "target": "Package",
               "version": "[3.0.1, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[3.4.0.1008975, )"
+              "version": "[4.0.0.425677, )"
             },
             "Xamarin.Forms.Theme.Base": {
               "target": "Package",

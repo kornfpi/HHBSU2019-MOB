@@ -6,6 +6,7 @@ using TodoREST;
 using Xamarin.Forms;
 using HabitatBuddy;
 using Plugin.LocalNotifications;
+using HabitatBuddy.Models;
 
 namespace HabitatBuddy {
     public partial class MainPage : ContentPage {
@@ -17,6 +18,7 @@ namespace HabitatBuddy {
         private bool loadingActionPlanContent = true;
         private bool loadingCategoryContent = true;
         private bool loadingReminderContent = true;
+
 
         // Decision tree object
         private Models.DecisionTree tree;
@@ -32,6 +34,38 @@ namespace HabitatBuddy {
 
         public MainPage() {
             InitializeComponent();
+
+            // Create internet connection checker
+            App.CheckConnectivity_Timer();
+
+            // Get registration info
+            App.GetRegistrationInfo();
+
+            if (App.registeredName.Equals("Unregistered"))
+            {
+                MainLabel.Text = "Welcome to the Homeowner Buddy (Unregistered)";
+            }
+            else
+            {
+                MainLabel.Text = "Welcome to the Homeowner Buddy, " + App.registeredName + "!";
+            }
+
+            // Check to see if application is online and alter view accordingly
+            if (App.isOnline)
+            {
+                Lbl_NoInternet.IsVisible = false;
+
+
+            }
+            else
+            {
+                Lbl_NoInternet.IsVisible = true;
+                Lbl_NoInternet.Text = "Internet not connected! Some features may be disabled!";
+
+            }
+
+
+
 
             // Construct a blank action plan, to be used when no action plan is available.
             blank_issue = new HomeIssue();
@@ -67,6 +101,29 @@ namespace HabitatBuddy {
         }
 
         /*
+         * Listener for "Register App" button
+        */
+        private void appRegistered(object sender, EventArgs e)
+        {
+            if (!loadingActionPlanContent)
+            { //Launch the questionnaire page if content is done loading                
+                Navigation.PushAsync(new HabitatBuddy.Views.RegistrationPage());
+            }
+        }
+
+
+        /*
+        * Listener for "Register App" button
+        */
+        private void checkConn(object sender, EventArgs e)
+        {
+            if (!loadingActionPlanContent)
+            { //Launch the questionnaire page if content is done loading                
+                Navigation.PushAsync(new HabitatBuddy.Views.InternetTestPage());
+            }
+        }
+
+        /*
          * Listener for category view button
          */
         private void Category_Button_Clicked(object sender, EventArgs e) {
@@ -93,6 +150,8 @@ namespace HabitatBuddy {
 
         }
 
+
+
         // Called when main page appears, reloads all content from the database in case of any changes
         protected async override void OnAppearing() {
             base.OnAppearing();
@@ -106,12 +165,60 @@ namespace HabitatBuddy {
             CategoryButton.IsEnabled = false;
             ReminderButton.IsEnabled = false;
 
+            // Get registration info and set display (locally)
+            App.GetRegistrationInfo();
+
+            if (App.registeredName.Equals("Unregistered"))
+            {
+                MainLabel.Text = "Welcome to the Homeowner Buddy (Unregistered)";
+            }
+            else
+            {
+                MainLabel.Text = "Welcome to the Homeowner Buddy, " + App.registeredName + "!";
+            }
+
+            // Check to see if application is online and alter view accordingly
+            if (App.isOnline)
+            {
+                Lbl_NoInternet.IsVisible = false;
+            }
+            else
+            {
+                Lbl_NoInternet.IsVisible = true;
+                Lbl_NoInternet.Text = "Internet not connected! Some features may be disabled!";
+            }
+
+            // Get list of all registrations (From remote database)
+            ListView registrationList = new ListView();
+            Console.WriteLine("Fetching registration info..."); // debug
+            registrationList.ItemsSource = await App.HomeRegInfo.RefreshDataAsync();
+            Console.WriteLine("Received registration info."); // debug
+            HomeRegInfo thisHomeReg = new HomeRegInfo();
+            foreach (HomeRegInfo regInfo in registrationList.ItemsSource) {
+                Console.WriteLine("---------------------------------------------------------------------------------" + regInfo.homeNumber);
+                if (App.homecode.Equals(regInfo.homeNumber))
+                {
+                    thisHomeReg = regInfo;
+                    Console.WriteLine("--------------------------------------------------------------------------------- REGISTERED" );
+                }
+                else
+                {
+                    Console.WriteLine("--------------------------------------------------------------------------------- CODE NOT FOUND");
+                }
+            }
+            HomeRegInfo testAddition = new HomeRegInfo();
+            testAddition.homeNumber = "12345678910";
+            testAddition.registeredTo = "Johnny 2 Bad";
+            await App.HomeRegInfo.SaveTodoItemAsync(testAddition, true);
+
+
 
             // pull all issues (action plans) from the database
             ListView issueList = new ListView();
             Console.WriteLine("Fetching Action Plans...");
             issueList.ItemsSource = await App.IssueManager.GetTasksAsync();
             Console.WriteLine("Received Action Plans.");
+
 
             // wipe categories and replace with new collection
             categories = new ObservableCollection<Models.Category>();
@@ -165,93 +272,93 @@ namespace HabitatBuddy {
 
             // Populate the decision tree
             tree = new Models.DecisionTree("Which area of the home is the problem affecting?");
-            tree.addChild("Where is the problem occuring in the kitchen?", "Kitchen", null);
+            tree.addChild("Where is the problem occuring in the kitchen?", "Kitchen", null, "kitchen70.png");
             tree.moveToChild(0);
-            tree.addChild("", "Refrigerator", blank_issue);
-            tree.addChild("What issue are you experiencing with the sink?", "Sink", null);
+            tree.addChild("", "Refrigerator", blank_issue, "no70.png");
+            tree.addChild("What issue are you experiencing with the sink?", "Sink", null, "no70.png");
             tree.moveToChild(1);
-            tree.addChild("", "No water", blank_issue);
-            tree.addChild("", "No hot water", blank_issue);
-            tree.addChild("", "Clogged/Water won't drain", blank_issue);
-            tree.addChild("", "Other issue", blank_issue);
+            tree.addChild("", "No water", blank_issue, "no70.png");
+            tree.addChild("", "No hot water", blank_issue, "no70.png");
+            tree.addChild("", "Clogged/Water won't drain", blank_issue, "no70.png");
+            tree.addChild("", "Other issue", blank_issue, "no70.png");
             tree.moveToParent();
-            tree.addChild("", "Stove", blank_issue);
-            tree.addChild("What issue is occuring with the door?", "Door", null);
+            tree.addChild("", "Stove", blank_issue, "stoveoven.png");
+            tree.addChild("What issue is occuring with the door?", "Door", null, "no70.png");
             tree.moveToChild(3);
-            tree.addChild("", "Off of Track", door_off_track);
-            tree.addChild("", "Other", blank_issue);
+            tree.addChild("", "Off of Track", door_off_track, "no70.png");
+            tree.addChild("", "Other", blank_issue, "no70.png");
             tree.moveToParent();
             tree.moveToParent();
-            tree.addChild("What's the problem in the bathroom?", "Bathroom", null);
+            tree.addChild("What's the problem in the bathroom?", "Bathroom", null, "bathroom70.png");
             tree.moveToChild(1);
-            tree.addChild("What issue is occuring with the door?", "Door", null);
+            tree.addChild("What issue is occuring with the door?", "Door", null, "no70.png");
             tree.moveToChild(0);
-            tree.addChild("", "Door Knob Loose", door_knob_loose);
-            tree.addChild("", "Other", blank_issue);
+            tree.addChild("", "Door Knob Loose", door_knob_loose, "no70.png");
+            tree.addChild("", "Other", blank_issue, "no70.png");
             tree.moveToParent();
-            tree.addChild("", "Bathroom Sink", blank_issue);
-            tree.addChild("", "Shower", blank_issue);
+            tree.addChild("", "Bathroom Sink", blank_issue, "no70.png");
+            tree.addChild("", "Shower", blank_issue, "no70.png");
             tree.moveToParent();
-            tree.addChild("Where is the problem occuring in the bedroom?", "Bedroom", null);
+            tree.addChild("Where is the problem occuring in the bedroom?", "Bedroom", null, "bed70.png");
             tree.moveToChild(2);
-            tree.addChild("What issue is occuring with the door?", "Door", null);
+            tree.addChild("What issue is occuring with the door?", "Door", null, "no70.png");
             tree.moveToChild(0);
-            tree.addChild("", "Off of Track", door_off_track);
-            tree.addChild("", "Door Knob Loose", door_knob_loose);
-            tree.addChild("", "Other", blank_issue);
+            tree.addChild("", "Off of Track", door_off_track, "no70.png");
+            tree.addChild("", "Door Knob Loose", door_knob_loose, "no70.png");
+            tree.addChild("", "Other", blank_issue, "no70.png");
             tree.moveToParent();
             tree.moveToParent();
-            tree.addChild("Where is the issue occuring in the living room or entry way?", "Living Room/Entry Way", null);
+            tree.addChild("Where is the issue occuring in the living room or entry way?", "Living Room/Entry Way", null, "sofa70.png");
             tree.moveToChild(3);
-            tree.addChild("What issue is occuring with the front door?", "Front Door", null);
+            tree.addChild("What issue is occuring with the front door?", "Front Door", null, "no70.png");
             tree.moveToChild(0);
-            tree.addChild("", "Handle Has Come Off of Door Knob", door_handle_broken);
-            tree.addChild("", "Door Knob Loose", door_knob_loose);
-            tree.addChild("", "Other", blank_issue);
+            tree.addChild("", "Handle Has Come Off of Door Knob", door_handle_broken, "no70.png");
+            tree.addChild("", "Door Knob Loose", door_knob_loose, "no70.png");
+            tree.addChild("", "Other", blank_issue, "no70.png");
             tree.moveToParent();
             tree.moveToParent();
-            tree.addChild("What problem is occuring in the basement?", "Basement/Laundry", null);
+            tree.addChild("What problem is occuring in the basement?", "Basement/Laundry", null, "laundry70.png");
             tree.moveToChild(4);
-            tree.addChild("What issue is occuring with the door?", "Broken/Stuck Door", null);
+            tree.addChild("What issue is occuring with the door?", "Broken/Stuck Door", null, "no70.png");
             tree.moveToChild(0);
-            tree.addChild("", "Off of Track", door_off_track);
-            tree.addChild("", "Other", blank_issue);
+            tree.addChild("", "Off of Track", door_off_track, "no70.png");
+            tree.addChild("", "Other", blank_issue, "no70.png");
             tree.moveToParent();
-            tree.addChild("Is the Sump Pump plugged in and working?", "Flooding/Water on Floor", null);
+            tree.addChild("Is the Sump Pump plugged in and working?", "Flooding/Water on Floor", null, "no70.png");
             tree.moveToChild(1);
-            tree.addChild("", "Yes", sewer);
-            tree.addChild("", "No", sump);
-            tree.addChild("", "Not Sure", sump);
+            tree.addChild("", "Yes", sewer, "no70.png");
+            tree.addChild("", "No", sump, "no70.png");
+            tree.addChild("", "Not Sure", sump, "no70.png");
             tree.moveToParent();
             tree.moveToParent();
-            tree.addChild("What symptoms is the home experiencing?", "Whole Home", null);
+            tree.addChild("What symptoms is the home experiencing?", "Whole Home", null, "wholehouse70.png");
             tree.moveToChild(5);
-            tree.addChild("Is your thermostat (living room) lit up, and switched to Heat or A/C?", "No heat or no A/C", null);
+            tree.addChild("Is your thermostat (living room) lit up, and switched to Heat or A/C?", "No heat or no A/C", null, "no70.png");
             tree.moveToChild(0);
-            tree.addChild("Is the furnace or A/C unit receiving electricity?", "Yes", null);
+            tree.addChild("Is the furnace or A/C unit receiving electricity?", "Yes", null, "no70.png");
             tree.moveToChild(0);
-            tree.addChild("Is the furnace filter excessively clogged and dirty?", "Yes", null);
+            tree.addChild("Is the furnace filter excessively clogged and dirty?", "Yes", null, "no70.png");
             tree.moveToChild(0);
-            tree.addChild("", "Yes", furnace_filter);
-            tree.addChild("Are the lights on the furnace panel blinking in any sequence other than a slow green or slow red blinking?", "No", null);
+            tree.addChild("", "Yes", furnace_filter, "no70.png");
+            tree.addChild("Are the lights on the furnace panel blinking in any sequence other than a slow green or slow red blinking?", "No", null, "no70.png");
             tree.moveToChild(1);
-            tree.addChild("", "Yes", furnace_lights);
-            tree.addChild("", "No", blank_issue);
-            tree.addChild("", "Not sure", furnace_lights);
+            tree.addChild("", "Yes", furnace_lights, "no70.png");
+            tree.addChild("", "No", blank_issue, "no70.png");
+            tree.addChild("", "Not sure", furnace_lights, "no70.png");
             tree.moveToParent();
-            tree.addChild("", "Not sure", furnace_filter);
+            tree.addChild("", "Not sure", furnace_filter, "no70.png");
             tree.moveToParent();
-            tree.addChild("", "No", hvac_electric);
-            tree.addChild("", "Not sure", hvac_electric);
+            tree.addChild("", "No", hvac_electric, "no70.png");
+            tree.addChild("", "Not sure", hvac_electric, "no70.png");
             tree.moveToParent();
-            tree.addChild("", "No", thermostat);
-            tree.addChild("", "Not sure", thermostat);
+            tree.addChild("", "No", thermostat, "no70.png");
+            tree.addChild("", "Not sure", thermostat, "no70.png");
             tree.moveToParent();
-            tree.addChild("Is the hot water tank receiving gas and electric?", "No hot water", null);
+            tree.addChild("Is the hot water tank receiving gas and electric?", "No hot water", null, "no70.png");
             tree.moveToChild(1);
-            tree.addChild("", "Yes", water_heater_yes_gas_electric);
-            tree.addChild("", "No", water_heater_no_gas_electric);
-            tree.addChild("", "Not sure", water_heater_no_gas_electric);
+            tree.addChild("", "Yes", water_heater_yes_gas_electric, "no70.png");
+            tree.addChild("", "No", water_heater_no_gas_electric, "no70.png");
+            tree.addChild("", "Not sure", water_heater_no_gas_electric, "no70.png");
             tree.moveToParent();
             tree.moveToParent();
             loadingActionPlanContent = false; //Set flag to false because tree is constructed, questionnaire page can now be launched
@@ -266,6 +373,8 @@ namespace HabitatBuddy {
             // wipe existing reminders and replace with empty collection
             reminders = new ObservableCollection<Models.MaintenanceItem>();
 
+
+
             int j = 3;//for TESTING DATES
             // Populate list of maintenance reminders
             foreach (Models.Maintenance reminder in reminderList.ItemsSource) {
@@ -276,7 +385,7 @@ namespace HabitatBuddy {
                         plan = issue;
                     }
                 }
-                Models.MaintenanceItem newReminder = new Models.MaintenanceItem(reminder.Name, reminder.RecurrencePeriod, plan);
+                Models.MaintenanceItem newReminder = new Models.MaintenanceItem(reminder.Name, reminder.RecurrencePeriod, plan, reminder.homecode);
                 newReminder.dueDate = new DateTime(2019, 4, 16 - j); //FOR TESTING DATES
                 j -= 3;  //FOR TESTING DATES
                 reminders.Add(newReminder);

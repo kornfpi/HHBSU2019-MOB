@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.421
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.452
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HabitatBuddy.Android", "HabitatBuddy\HabitatBuddy.Android\HabitatBuddy.Android.csproj", "{B0149761-A8E8-459C-9BC7-320F95644467}"
 EndProject
@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HabitatBuddy.iOS", "Habitat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HabitatBuddy.UWP", "HabitatBuddy\HabitatBuddy.UWP\HabitatBuddy.UWP.csproj", "{263C20CE-7AE0-43C4-9CE1-9EB4C392251A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HabitatBuddy", "HabitatBuddy\HabitatBuddy\HabitatBuddy.csproj", "{1CB7CB33-671E-4630-A946-16B38D6E69A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HabitatBuddy", "HabitatBuddy\HabitatBuddy\HabitatBuddy.csproj", "{1CB7CB33-671E-4630-A946-16B38D6E69A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

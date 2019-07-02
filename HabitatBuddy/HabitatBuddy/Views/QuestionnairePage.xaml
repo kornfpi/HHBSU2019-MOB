@@ -1,26 +1,79 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             
+             
              x:Class="HabitatBuddy.Views.QuestionnairePage"
              Title="Homeowner Buddy">
+
+
     <ContentPage.Content>
-        <StackLayout Margin="10,10,10,10">
-            <Label Text="Question Prompt Text"
-                HorizontalOptions="Center"
-                FontAttributes="Bold" 
-                FontSize="Large"
-                class="HorizontalRule"
-                x:Name="QuestionPrompt"/>
+        <ScrollView>
+            <!--Note RowSpacing and ColumnSpacing attributes for Grid-->
+            <Grid Margin="10,10,10,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
 
-            <Button Text="Answer 1" Clicked="Answer_1_Button_Clicked" x:Name="answer_button_1" class="Rounded"/>
-            <Button Text="Answer 2" Clicked="Answer_2_Button_Clicked" x:Name="answer_button_2" class="Rounded"/>
-            <Button Text="Answer 3" Clicked="Answer_3_Button_Clicked" x:Name="answer_button_3" class="Rounded"/>
-            <Button Text="Answer 4" Clicked="Answer_4_Button_Clicked" x:Name="answer_button_4" class="Rounded"/>
-            <Button Text="Answer 5" Clicked="Answer_5_Button_Clicked" x:Name="answer_button_5" class="Rounded"/>
-            <Button Text="Answer 6" Clicked="Answer_6_Button_Clicked" x:Name="answer_button_6" class="Rounded"/>
-            <Button Text="Answer 7" Clicked="Answer_7_Button_Clicked" x:Name="answer_button_7" class="Rounded"/>
-            <Button Text="Answer 8" Clicked="Answer_8_Button_Clicked" x:Name="answer_button_8" class="Rounded"/>
+                <Label Text="Question Prompt Text"
+                    Grid.Row="0"
+                    Grid.ColumnSpan="2"
+                    HorizontalOptions="Center"
+                    FontAttributes="Bold" 
+                    Margin="20,10"
+                    FontSize="Large"
+                    class="HorizontalRule"
+                    x:Name="QuestionPrompt"/>
+                <StackLayout Grid.Row="1" Grid.Column="0">
+                    <Label Text="Kitchen" x:Name="answer_button_1_label"></Label>
+                    <ImageButton Source="stoveoven70.png" HeightRequest="150" VerticalOptions="FillAndExpand" Clicked="Answer_1_Button_Clicked" x:Name="answer_button_1" class="Rounded"/>
+                </StackLayout>
 
-        </StackLayout>
+
+                <StackLayout Grid.Row="1" Grid.Column="1">
+                    <Label Text="Bathroom" x:Name="answer_button_2_label"></Label>
+                    <ImageButton Source="bathroom70.png" HeightRequest="150"  VerticalOptions="FillAndExpand" Clicked="Answer_2_Button_Clicked" x:Name="answer_button_2" class="Rounded"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="2" Grid.Column="0">
+                    <Label Text="Bathroom" x:Name="answer_button_3_label"></Label>
+                    <ImageButton Grid.Row="2" Grid.Column ="0" Source="bed70.png" HeightRequest="150"  VerticalOptions="FillAndExpand" Clicked="Answer_3_Button_Clicked" x:Name="answer_button_3" class="Rounded"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="2" Grid.Column="1">
+                    <Label Text="Living Room" x:Name="answer_button_4_label"></Label>
+                    <ImageButton Source="sofa70.png" HeightRequest="150"  VerticalOptions="FillAndExpand" Clicked="Answer_4_Button_Clicked" x:Name="answer_button_4" class="Rounded"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="3" Grid.Column="0">
+                    <Label Text="Laundry" x:Name="answer_button_5_label"></Label>
+                    <ImageButton Source="laundry70.png" HeightRequest="150"  VerticalOptions="FillAndExpand" Clicked="Answer_5_Button_Clicked" x:Name="answer_button_5" class="Rounded"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="3" Grid.Column="1">
+                    <Label Text="Home" x:Name="answer_button_6_label"></Label>
+                    <ImageButton Source="wholehouse70.png" HeightRequest="150"  VerticalOptions="FillAndExpand" Clicked="Answer_6_Button_Clicked" x:Name="answer_button_6" class="Rounded"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="4" Grid.Column="0">
+                    <Label Text="Other" x:Name="answer_button_7_label"></Label>
+                    <ImageButton Source="no70.png" HeightRequest="150"  VerticalOptions="FillAndExpand" Clicked="Answer_7_Button_Clicked" x:Name="answer_button_7" class="Rounded"/>
+                </StackLayout>
+                <StackLayout Grid.Row="4" Grid.Column="1">
+                    <Label Text="Other" x:Name="answer_button_8_label"></Label>
+                    <ImageButton Source="no70.png" HeightRequest="150"  VerticalOptions="FillAndExpand" Clicked="Answer_8_Button_Clicked" x:Name="answer_button_8" class="Rounded"/>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
+
+

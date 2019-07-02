@@ -3,6 +3,8 @@ HabitatBuddy
 ModernHttpClient
 Newtonsoft.Json
 OkHttp
+Plugin.Connectivity.Abstractions
+Plugin.Connectivity
 Plugin.LocalNotifications.Abstractions
 Plugin.LocalNotifications
 SQLite-net
@@ -20,6 +22,7 @@ Xamarin.Android.Support.Annotations
 Xamarin.Android.Support.Compat
 Xamarin.Android.Support.Core.UI
 Xamarin.Android.Support.Core.Utils
+Xamarin.Android.Support.CustomTabs
 Xamarin.Android.Support.Design
 Xamarin.Android.Support.Fragment
 Xamarin.Android.Support.Media.Compat
@@ -41,6 +44,6 @@ Xamarin.Forms.Theme.Light
 Xamarin.Forms.Xaml
 netstandard
 System.Reflection.Extensions
-System.Diagnostics.Tools
 System.Resources.ResourceManager
 System.ComponentModel
+System.Diagnostics.Tools

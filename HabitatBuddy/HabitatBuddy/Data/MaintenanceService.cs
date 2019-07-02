@@ -22,8 +22,12 @@ namespace TodoREST
             var authHeaderValue = Convert.ToBase64String(Encoding.UTF8.GetBytes(authData));
 
             client = new HttpClient();
+           
             client.MaxResponseContentBufferSize = 256000;
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authHeaderValue);
+
+
+
         }
 
         public async Task<List<Maintenance>> RefreshDataAsync()
@@ -51,8 +55,8 @@ namespace TodoREST
         }
 
 
-        
 
-       
+
+
     }
 }

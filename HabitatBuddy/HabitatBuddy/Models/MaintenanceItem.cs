@@ -13,12 +13,17 @@ namespace HabitatBuddy.Models
         public TodoREST.HomeIssue actionPlan { get; set; }
         public string displayTitle { get; set; }
 
-        public MaintenanceItem(string t, int r, TodoREST.HomeIssue p)
+        // ---------------- Change Here!
+        public string homecode { get; set; }
+        //-------------------
+
+        public MaintenanceItem(string t, int r, TodoREST.HomeIssue p, string hc)
         {
             title = t;
             recurrencePeriod = r;
             actionPlan = p;
             dueDate = DateTime.Now;
+            homecode = hc;
 
             resetDueDate();
         }
