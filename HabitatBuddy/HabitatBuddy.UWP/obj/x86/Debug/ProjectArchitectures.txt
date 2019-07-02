@@ -1,1 +1,0 @@
-C:\Users\husky\Source\Repos\habitat-buddy-3\HabitatBuddy\HabitatBuddy.UWP\HabitatBuddy.UWP.csproj;x86
