@@ -72,6 +72,10 @@
                     <Label Text="Button 8 Text" x:Name="answer_button_8_label" class="ImageButtonLabel"/>
                     <ImageButton Source="no70.png" Clicked="Answer_8_Button_Clicked" x:Name="answer_button_8" class="Rounded"/>
                 </StackLayout>
+                <StackLayout Grid.Row="5" Grid.Column="0">
+                    <Label Text="Other" x:Name="answer_button_9_label"></Label>
+                    <ImageButton Source="no70.png" HeightRequest="150"  VerticalOptions="FillAndExpand" Clicked="Answer_9_Button_Clicked" x:Name="answer_button_9" class="Rounded"/>
+                </StackLayout>
             </Grid>
         </ScrollView>
     </ContentPage.Content>
