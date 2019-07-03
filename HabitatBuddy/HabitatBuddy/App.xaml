@@ -26,6 +26,26 @@
                 <Setter Property="TextColor" Value="{ StaticResource GeneralTextColor }" />
             </Style>
 
+
+            <Style TargetType="StackLayout" Class="ImageButtonLayout">
+                <Setter Property="Padding" Value="5"/>
+            </Style>
+
+            <Style TargetType="Label" Class="ImageButtonLabel">
+                <Setter Property="TextColor" Value="{ StaticResource GeneralTextColor }" />
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="Margin" Value="0"/>
+            </Style>
+
+            <Style TargetType="ImageButton" Class="Rounded">
+                <Setter Property="BackgroundColor" Value="{ StaticResource HabitatBlue }" />
+                <Setter Property="CornerRadius" Value="8"/>
+                <Setter Property="Aspect" Value="Fill"/>
+                <Setter Property="HeightRequest" Value="150"/>
+            </Style>
+            
+            
             <Style TargetType="Button" Class="Rounded">
                 <Setter Property="BackgroundColor" Value="{ StaticResource HabitatBlue }" />
                 <Setter Property="TextColor" Value="White"/>
