@@ -14,14 +14,15 @@ namespace HabitatBuddy.Models
         public TodoREST.HomeIssue actionPlan;
         public string icon;
 
-        public DecisionTreeNode() {
+        public DecisionTreeNode()
+        {
             parent = null;
             children = new List<DecisionTreeNode>();
             questionText = "blank question";
             answerText = "blank answer";
             actionPlan = null;
             isRoot = false;
-            icon = "no70.png";
+            icon = "stoveoven70.png";
         }
 
     }

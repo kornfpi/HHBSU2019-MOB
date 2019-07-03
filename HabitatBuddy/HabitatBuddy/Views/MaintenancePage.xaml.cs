@@ -18,11 +18,29 @@ namespace HabitatBuddy.Views
 		public MaintenancePage (ObservableCollection<Models.MaintenanceItem> r)
 		{
 			InitializeComponent ();
+
+
+            // ---------------------------------- Changes Here!
+            
+            ObservableCollection<Models.MaintenanceItem> remindersNarrowed = new ObservableCollection<Models.MaintenanceItem>();
+            foreach (Models.MaintenanceItem newItem in r)
+            {
+                if (newItem.homecode != null && newItem.homecode.Equals(App.homecode))
+                {
+                    remindersNarrowed.Add(newItem);
+                }
+            }
+
+            //---------------------------------------------
+
+
             // Update all display titles to show appropriate date
-            foreach(Models.MaintenanceItem reminder in r) {
+            foreach (Models.MaintenanceItem reminder in remindersNarrowed) // Used to be in r
+            {
                 reminder.reloadTitle();
             }
-            reminders = r;
+
+            reminders = remindersNarrowed; // Used to be r
             ReminderList.ItemsSource = reminders;
             ViewPlanButton.IsEnabled = false;
             CompleteButton.IsEnabled = false;

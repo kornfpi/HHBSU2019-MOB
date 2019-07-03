@@ -15,6 +15,9 @@ namespace HabitatBuddy.Views
 		public ActionPlanPage (TodoREST.HomeIssue actionPlan)
 		{
 			InitializeComponent ();
+
+
+
             //Models.Issue issue = new Models.Issue();
             //issue = App.Database.GetIssueAsync(int.Parse(actionPlanID)).Result;
             //TitleText.Text = actionPlan.Title;

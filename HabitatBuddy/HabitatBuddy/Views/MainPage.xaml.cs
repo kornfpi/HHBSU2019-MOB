@@ -6,6 +6,7 @@ using TodoREST;
 using Xamarin.Forms;
 using HabitatBuddy;
 using Plugin.LocalNotifications;
+using HabitatBuddy.Models;
 
 namespace HabitatBuddy {
     public partial class MainPage : ContentPage {
@@ -17,6 +18,7 @@ namespace HabitatBuddy {
         private bool loadingActionPlanContent = true;
         private bool loadingCategoryContent = true;
         private bool loadingReminderContent = true;
+
 
         // Decision tree object
         private Models.DecisionTree tree;
@@ -32,6 +34,38 @@ namespace HabitatBuddy {
 
         public MainPage() {
             InitializeComponent();
+
+            // Create internet connection checker
+            App.CheckConnectivity_Timer();
+
+            // Get registration info
+            App.GetRegistrationInfo();
+
+            if (App.registeredName.Equals("Unregistered"))
+            {
+                MainLabel.Text = "Welcome to the Homeowner Buddy (Unregistered)";
+            }
+            else
+            {
+                MainLabel.Text = "Welcome to the Homeowner Buddy, " + App.registeredName + "!";
+            }
+
+            // Check to see if application is online and alter view accordingly
+            if (App.isOnline)
+            {
+                Lbl_NoInternet.IsVisible = false;
+
+
+            }
+            else
+            {
+                Lbl_NoInternet.IsVisible = true;
+                Lbl_NoInternet.Text = "Internet not connected! Some features may be disabled!";
+
+            }
+
+
+
 
             // Construct a blank action plan, to be used when no action plan is available.
             blank_issue = new HomeIssue();
@@ -67,6 +101,29 @@ namespace HabitatBuddy {
         }
 
         /*
+         * Listener for "Register App" button
+        */
+        private void appRegistered(object sender, EventArgs e)
+        {
+            if (!loadingActionPlanContent)
+            { //Launch the questionnaire page if content is done loading                
+                Navigation.PushAsync(new HabitatBuddy.Views.RegistrationPage());
+            }
+        }
+
+
+        /*
+        * Listener for "Register App" button
+        */
+        private void checkConn(object sender, EventArgs e)
+        {
+            if (!loadingActionPlanContent)
+            { //Launch the questionnaire page if content is done loading                
+                Navigation.PushAsync(new HabitatBuddy.Views.InternetTestPage());
+            }
+        }
+
+        /*
          * Listener for category view button
          */
         private void Category_Button_Clicked(object sender, EventArgs e) {
@@ -93,6 +150,8 @@ namespace HabitatBuddy {
 
         }
 
+
+
         // Called when main page appears, reloads all content from the database in case of any changes
         protected async override void OnAppearing() {
             base.OnAppearing();
@@ -106,12 +165,60 @@ namespace HabitatBuddy {
             CategoryButton.IsEnabled = false;
             ReminderButton.IsEnabled = false;
 
+            // Get registration info and set display (locally)
+            App.GetRegistrationInfo();
+
+            if (App.registeredName.Equals("Unregistered"))
+            {
+                MainLabel.Text = "Welcome to the Homeowner Buddy (Unregistered)";
+            }
+            else
+            {
+                MainLabel.Text = "Welcome to the Homeowner Buddy, " + App.registeredName + "!";
+            }
+
+            // Check to see if application is online and alter view accordingly
+            if (App.isOnline)
+            {
+                Lbl_NoInternet.IsVisible = false;
+            }
+            else
+            {
+                Lbl_NoInternet.IsVisible = true;
+                Lbl_NoInternet.Text = "Internet not connected! Some features may be disabled!";
+            }
+
+            // Get list of all registrations (From remote database)
+            ListView registrationList = new ListView();
+            Console.WriteLine("Fetching registration info..."); // debug
+            registrationList.ItemsSource = await App.HomeRegInfo.RefreshDataAsync();
+            Console.WriteLine("Received registration info."); // debug
+            HomeRegInfo thisHomeReg = new HomeRegInfo();
+            foreach (HomeRegInfo regInfo in registrationList.ItemsSource) {
+                Console.WriteLine("---------------------------------------------------------------------------------" + regInfo.homeNumber);
+                if (App.homecode.Equals(regInfo.homeNumber))
+                {
+                    thisHomeReg = regInfo;
+                    Console.WriteLine("--------------------------------------------------------------------------------- REGISTERED" );
+                }
+                else
+                {
+                    Console.WriteLine("--------------------------------------------------------------------------------- CODE NOT FOUND");
+                }
+            }
+            HomeRegInfo testAddition = new HomeRegInfo();
+            testAddition.homeNumber = "12345678910";
+            testAddition.registeredTo = "Johnny 2 Bad";
+            await App.HomeRegInfo.SaveTodoItemAsync(testAddition, true);
+
+
 
             // pull all issues (action plans) from the database
             ListView issueList = new ListView();
             Console.WriteLine("Fetching Action Plans...");
             issueList.ItemsSource = await App.IssueManager.GetTasksAsync();
             Console.WriteLine("Received Action Plans.");
+
 
             // wipe categories and replace with new collection
             categories = new ObservableCollection<Models.Category>();
@@ -266,6 +373,8 @@ namespace HabitatBuddy {
             // wipe existing reminders and replace with empty collection
             reminders = new ObservableCollection<Models.MaintenanceItem>();
 
+
+
             int j = 3;//for TESTING DATES
             // Populate list of maintenance reminders
             foreach (Models.Maintenance reminder in reminderList.ItemsSource) {
@@ -276,7 +385,7 @@ namespace HabitatBuddy {
                         plan = issue;
                     }
                 }
-                Models.MaintenanceItem newReminder = new Models.MaintenanceItem(reminder.Name, reminder.RecurrencePeriod, plan);
+                Models.MaintenanceItem newReminder = new Models.MaintenanceItem(reminder.Name, reminder.RecurrencePeriod, plan, reminder.homecode);
                 newReminder.dueDate = new DateTime(2019, 4, 16 - j); //FOR TESTING DATES
                 j -= 3;  //FOR TESTING DATES
                 reminders.Add(newReminder);
