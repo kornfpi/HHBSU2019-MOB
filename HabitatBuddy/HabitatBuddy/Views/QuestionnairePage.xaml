@@ -35,46 +35,47 @@
                 
                 <StackLayout Grid.Row="1" Grid.Column="0" class="ImageButtonLayout">
                     <Label Text="Button 1 Text" x:Name="answer_button_1_label" class="ImageButtonLabel"/>
-                    <ImageButton Source="stoveoven70.png" Clicked="Answer_1_Button_Clicked" x:Name="answer_button_1" class="Rounded"/>
+                    <ImageButton Clicked="Answer_1_Button_Clicked" x:Name="answer_button_1" class="Rounded"/>
                 </StackLayout>
 
                 <StackLayout Grid.Row="1" Grid.Column="1" class="ImageButtonLayout">
                     <Label Text="Button 2 Text" x:Name="answer_button_2_label" class="ImageButtonLabel"/>
-                    <ImageButton Source="bathroom70.png" Clicked="Answer_2_Button_Clicked" x:Name="answer_button_2" class="Rounded"/>
+                    <ImageButton Clicked="Answer_2_Button_Clicked" x:Name="answer_button_2" class="Rounded"/>
                 </StackLayout>
 
                 <StackLayout Grid.Row="2" Grid.Column="0" class="ImageButtonLayout">
                     <Label Text="Button 3 Text" x:Name="answer_button_3_label" class="ImageButtonLabel"/>
-                    <ImageButton Source="bed70.png" Clicked="Answer_3_Button_Clicked" x:Name="answer_button_3" class="Rounded"/>
+                    <ImageButton Clicked="Answer_3_Button_Clicked" x:Name="answer_button_3" class="Rounded"/>
                 </StackLayout>
 
                 <StackLayout Grid.Row="2" Grid.Column="1" class="ImageButtonLayout">
                     <Label Text="Button 4 Text" x:Name="answer_button_4_label" class="ImageButtonLabel"/>
-                    <ImageButton Source="sofa70.png" Clicked="Answer_4_Button_Clicked" x:Name="answer_button_4" class="Rounded"/>
+                    <ImageButton Clicked="Answer_4_Button_Clicked" x:Name="answer_button_4" class="Rounded"/>
                 </StackLayout>
 
                 <StackLayout Grid.Row="3" Grid.Column="0" class="ImageButtonLayout">
                     <Label Text="Button 5 Text" x:Name="answer_button_5_label" class="ImageButtonLabel"/>
-                    <ImageButton Source="laundry70.png" Clicked="Answer_5_Button_Clicked" x:Name="answer_button_5" class="Rounded"/>
+                    <ImageButton Clicked="Answer_5_Button_Clicked" x:Name="answer_button_5" class="Rounded"/>
                 </StackLayout>
 
                 <StackLayout Grid.Row="3" Grid.Column="1" class="ImageButtonLayout">
                     <Label Text="Button 6 Text" x:Name="answer_button_6_label" class="ImageButtonLabel"/>
-                    <ImageButton Source="wholehouse70.png" Clicked="Answer_6_Button_Clicked" x:Name="answer_button_6" class="Rounded"/>
+                    <ImageButton Clicked="Answer_6_Button_Clicked" x:Name="answer_button_6" class="Rounded"/>
                 </StackLayout>
 
                 <StackLayout Grid.Row="4" Grid.Column="0" class="ImageButtonLayout">
                     <Label Text="Button 7 Text" x:Name="answer_button_7_label" class="ImageButtonLabel"/>
-                    <ImageButton Source="no70.png" Clicked="Answer_7_Button_Clicked" x:Name="answer_button_7" class="Rounded"/>
+                    <ImageButton Clicked="Answer_7_Button_Clicked" x:Name="answer_button_7" class="Rounded"/>
                 </StackLayout>
 
                 <StackLayout Grid.Row="4" Grid.Column="1" class="ImageButtonLayout">
                     <Label Text="Button 8 Text" x:Name="answer_button_8_label" class="ImageButtonLabel"/>
-                    <ImageButton Source="no70.png" Clicked="Answer_8_Button_Clicked" x:Name="answer_button_8" class="Rounded"/>
+                    <ImageButton Clicked="Answer_8_Button_Clicked" x:Name="answer_button_8" class="Rounded"/>
                 </StackLayout>
+                
                 <StackLayout Grid.Row="5" Grid.Column="0">
                     <Label Text="Other" x:Name="answer_button_9_label"></Label>
-                    <ImageButton Source="no70.png" Clicked="Answer_9_Button_Clicked" x:Name="answer_button_9" class="Rounded"/>
+                    <ImageButton Clicked="Answer_9_Button_Clicked" x:Name="answer_button_9" class="Rounded"/>
                 </StackLayout>
             </Grid>
         </ScrollView>
