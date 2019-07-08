@@ -270,11 +270,11 @@ namespace HabitatBuddy {
             loadingCategoryContent = false;
             CategoryButton.IsEnabled = true;
             tree = new Models.DecisionTree("Which area of the home is the problem affecting?");
-            tree.addChild("What Location of the Exterior is the Problem Affecting?", "Exterior", null, "no70.png");
+            tree.addChild("What Location of the Exterior is the Problem Affecting?", "Exterior", null, "house_outside.png");
             tree.moveToChild(0);
             tree.addChild("What issue is occuring with the Outside Walls of House?", "Outside Walls of House", null, "no70.png");
             tree.moveToChild(0);
-            tree.addChild("", "Hole in Siding/Piece of Siding Loose", blank_issue, "no70.png");
+            tree.addChild("", "Hole in Siding/Piece of Siding Loose", blank_issue, "siding.png");
             tree.moveToParent();
             tree.addChild("What issue is occuring with the Driveway?", "Driveway", null, "no70.png");
             tree.moveToChild(1);
@@ -311,52 +311,52 @@ namespace HabitatBuddy {
             tree.moveToParent();
 
             tree.moveToParent();
-            tree.addChild("What Location of the Interior is the Problem Affecting?", "Interior", null, "no70.png");
+            tree.addChild("What Location of the Interior is the Problem Affecting?", "Interior", null, "house_inside.png");
             tree.moveToChild(1);
-            tree.addChild("What issue is occuring with the Bathroom?", "Bathroom", null, "no70.png");
+            tree.addChild("What issue is occuring with the Bathroom?", "Bathroom", null, "bathroom450.png");
             tree.moveToChild(0);
-            tree.addChild("", "Sink Stopper Doesn't Work", blank_issue, "no70.png");
-            tree.addChild("", "Toilet Clogged or Won't Flush", blank_issue, "no70.png");
-            tree.addChild("", "Bathub/Shower not Draining", blank_issue, "no70.png");
-            tree.addChild("", "Sink Drain Pipes Leaking", blank_issue, "no70.png");
+            tree.addChild("", "Sink Stopper Doesn't Work", blank_issue, "bathroomsink_stopper.png");
+            tree.addChild("", "Toilet Clogged or Won't Flush", blank_issue, "toilet_clogged.png");
+            tree.addChild("", "Bathub/Shower not Draining", blank_issue, "bathtub_overflow.png");
+            tree.addChild("", "Sink Drain Pipes Leaking", blank_issue, "kitchensink_leakypipes.png");
             tree.moveToParent();
-            tree.addChild("What issue is occuring with the Kitchen?", "Kitchen", null, "no70.png");
+            tree.addChild("What issue is occuring with the Kitchen?", "Kitchen", null, "kitchen.png");
             tree.moveToChild(1);
-            tree.addChild("", "Garbage Disposal Not Working", blank_issue, "no70.png");
-            tree.addChild("", "Sink Drain Pipes Leaking", blank_issue, "no70.png");
-            tree.addChild("", "Damaged or Loose Piece of Flooring", blank_issue, "no70.png");
+            tree.addChild("", "Garbage Disposal Not Working", blank_issue, "kitchensink_garbagedisposal.png");
+            tree.addChild("", "Sink Drain Pipes Leaking", blank_issue, "kitchensink_leakypipes.png");
+            tree.addChild("", "Damaged or Loose Piece of Flooring", blank_issue, "floor_cracked.png");
             tree.moveToParent();
 
-            tree.addChild("What issue is occuring with the Bedroom?", "Bedroom", null, "no70.png");
+            tree.addChild("What issue is occuring with the Bedroom?", "Bedroom", null, "bed.png");
             tree.moveToChild(2);
-            tree.addChild("", "Wire Shelving or Brackets have come off Wall ", blank_issue, "no70.png") ;
-            tree.addChild("", "Bypass Doors off Track, Won't Slide, or Floor Guide", blank_issue, "no70.png");
-            tree.addChild("", "Damaged or Loose Piece of Flooring", blank_issue, "no70.png");
+            tree.addChild("", "Wire Shelving or Brackets have come off Wall ", blank_issue, "closet_shelfoffwall.png") ;
+            tree.addChild("", "Bypass Doors off Track, Won't Slide, or Floor Guide", blank_issue, "closet_doorhelp.png");
+            tree.addChild("", "Damaged or Loose Piece of Flooring", blank_issue, "floor_cracked.png");
             tree.moveToParent();
 
-            tree.addChild("What issue is occuring with the Interior Walls of House?", "Throughout Interior Walls of House", null, "no70.png");
+            tree.addChild("What issue is occuring with the Interior Walls of House?", "Throughout Interior Walls of House", null, "wall.png");
             tree.moveToChild(3);
-            tree.addChild("", "Nail or Screw Pops", blank_issue, "no70.png");
+            tree.addChild("", "Nail or Screw Pops", blank_issue, "wall_nails.png");
             tree.moveToParent();
 
-            tree.addChild("What issue is occuring with the Laundry/Linen?", "Laundry/Linen Closet", null, "no70.png");
+            tree.addChild("What issue is occuring with the Laundry/Linen?", "Laundry/Linen Closet", null, "laundry.png");
             tree.moveToChild(4);
-            tree.addChild("", "Wire Shelving or Brackets have come off Wall ", blank_issue, "no70.png");
+            tree.addChild("", "Wire Shelving or Brackets have come off Wall ", blank_issue, "closet_shelfoffwall.png");
             tree.moveToParent();
 
             tree.addChild("What issue is occuring with the Pantry?", "Pantry", null, "no70.png");
             tree.moveToChild(5);
-            tree.addChild("", "Wire Shelving or Brackets have come off Wall ", blank_issue, "no70.png");
+            tree.addChild("", "Wire Shelving or Brackets have come off Wall ", blank_issue, "closet_shelfoffwall.png");
             tree.moveToParent();
 
             tree.addChild("What issue is occuring with the Halls?", "Halls", null, "no70.png");
             tree.moveToChild(6);
-            tree.addChild("", "Damaged or Loose Piece of Flooring", blank_issue, "no70.png");
+            tree.addChild("", "Damaged or Loose Piece of Flooring", blank_issue, "floor_cracked.png");
             tree.moveToParent();
 
-            tree.addChild("What issue is occuring with the Living Room?", "Living Room", null, "no70.png");
+            tree.addChild("What issue is occuring with the Living Room?", "Living Room", null, "sofa.png");
             tree.moveToChild(7);
-            tree.addChild("", "Damaged or Loose Piece of Flooring", blank_issue, "no70.png");
+            tree.addChild("", "Damaged or Loose Piece of Flooring", blank_issue, "floor_cracked.png");
             tree.moveToParent();
 
 

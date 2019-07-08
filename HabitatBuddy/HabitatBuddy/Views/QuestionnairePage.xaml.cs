@@ -76,16 +76,7 @@ namespace HabitatBuddy.Views
                 {
                     tree.moveToChild(i);
                     answerButtonLabels[i].Text = tree.getAnswerText();
-
-                    try
-                    {
-                        answerButtons[i].Source = tree.getIcon();
-                        Console.WriteLine("GOOD| " + i + ": " + tree.getIcon());
-                    }
-                    catch
-                    {
-                        Console.WriteLine("BAD| " + i);
-                    }
+                    answerButtons[i].Source = tree.getIcon();
                     tree.moveToParent();
                     i++;
                 }
