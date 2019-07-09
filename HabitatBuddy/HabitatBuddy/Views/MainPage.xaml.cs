@@ -324,9 +324,9 @@ namespace HabitatBuddy {
             tree.moveToChild(0);
             tree.addChild("What issue is occuring with the Outside Walls of House?", "Outside Walls of House", null, "siding.png");
             tree.moveToChild(0);
-            tree.addChild("", "Hole in Siding/Piece of Siding Loose", siding, "siding.png");
+            tree.addChild("", "Hole in Siding/Piece of Siding Loose", siding, "siding_broke.png");
             tree.moveToParent();
-            tree.addChild("What issue is occuring with the Driveway?", "Driveway", null, "no70.png");
+            tree.addChild("What issue is occuring with the Driveway?", "Driveway", null, "driveway_byhouse.png");
             tree.moveToChild(1);
             tree.addChild("", "Cracks in Concrete 1/4\" or greater ", concrete, "outside_concrete_cracked_wtext.png");
             tree.moveToParent();
@@ -340,7 +340,7 @@ namespace HabitatBuddy {
             tree.addChild("", "Bare Spots in Lawn", lawn, "grass_bare_arrow.png");
             tree.moveToParent();
 
-            tree.addChild("What issue is occuring with the Porch?", "Porch", null, "no70.png");
+            tree.addChild("What issue is occuring with the Porch?", "Porch", null, "porch.png");
             tree.moveToChild(4);
             tree.addChild("", "Cracks in Concrete 1/4\" or greater ", concrete, "outside_concrete_cracked_wtext.png");
             tree.moveToParent();
@@ -355,7 +355,7 @@ namespace HabitatBuddy {
             tree.addChild("", "Cracks in Concrete 1/4\" or greater ", concrete, "outside_concrete_cracked_wtext.png");
             tree.moveToParent();
 
-            tree.addChild("What issue is occuring with the Basement Wall?", "Basement Wall", null, "no70.png");
+            tree.addChild("What issue is occuring with the Basement Wall?", "Basement Wall", null, "basement_wall.png");
             tree.moveToChild(7);
             tree.addChild("", "Cracks in Concrete 1/4\" or greater ", concrete, "outside_concrete_cracked_wtext.png");
             tree.moveToParent();
@@ -405,7 +405,7 @@ namespace HabitatBuddy {
             tree.addChild("", "Wire Shelving or Brackets have come off Wall ", closet, "closet_shelfoffwall.png");
             tree.moveToParent();
 
-            tree.addChild("What issue is occuring with the Halls?", "Halls", null, "no70.png");
+            tree.addChild("What issue is occuring with the Halls?", "Halls", null, "hall.png");
             tree.moveToChild(6);
             tree.addChild("", "Damaged or Loose Piece of Flooring", flooring, "floor_cracked.png");
             tree.moveToParent();
@@ -415,7 +415,7 @@ namespace HabitatBuddy {
             tree.addChild("", "Damaged or Loose Piece of Flooring", flooring, "floor_cracked.png");
             tree.moveToParent();
 
-            tree.addChild("What issue is occuring with the Basement?", "Basement", null, "no70.png");
+            tree.addChild("What issue is occuring with the Basement?", "Basement", null, "basement.png");
             tree.moveToChild(8);
             tree.addChild("", "Sump Pump not Working / Basement Wet", sump, "sumppump_floorwater.png");
             tree.moveToParent();
