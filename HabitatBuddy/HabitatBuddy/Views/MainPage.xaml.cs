@@ -289,17 +289,29 @@ namespace HabitatBuddy {
                 foreach (Models.Category c in categories) {
                     // If the issue's category matches a category in the list, add the action plan to that category's issue list
                     if (c.title.Equals(issue.Category)) {
-                        newCategory = false;
-                        c.issues.Add(issue);
+                        if(issue.ActionPlanId >= 20 && issue.ActionPlanId <=170)
+                        {
+                            newCategory = false;
+                            c.issues.Add(issue);
+                        }
+                        
                     }
                 }
 
                 // If category did not yet exist, create it and add the issue to its issue list
                 if (newCategory) {
-                    categories.Add(new Models.Category(issue.Category));
-                    categories[categories.Count - 1].issues.Add(issue);
+                    if (issue.ActionPlanId >= 20 && issue.ActionPlanId <= 170)
+                    {
+                        categories.Add(new Models.Category(issue.Category));
+                        categories[categories.Count - 1].issues.Add(issue);
+                    }
                 }
             }
+
+
+
+            setCategoryTitles();
+
 
             // done loading category content
             loadingCategoryContent = false;
@@ -549,6 +561,73 @@ namespace HabitatBuddy {
             // Schedule push notifications for maintenance items that are due soon
             sendReminderPushNotifs();
         }
+
+        private void setCategoryTitles()
+        {
+            //Siding = 20 | ID: 0
+            foreach(Models.Category cat in categories) {
+                String switchCase = cat.title;
+
+                switch (switchCase)
+                {
+                    case "0":
+                        cat.title = "Siding";
+                        break;
+                    case "1":
+                        cat.title = "Concrete";
+                        break;
+                    case "2":
+                        cat.title = "Downspouts";
+                        break;
+                    case "3":
+                        cat.title = "Lawn";
+                        break;
+                    case "4":
+                        cat.title = "Flooring";
+                        break;
+                    case "5":
+                        cat.title = "Sinks";
+                        break;
+                    case "6":
+                        cat.title = "Toilets";
+                        break;
+                    case "7":
+                        cat.title = "Bathtubs & Showers";
+                        break;
+                    case "8":
+                        cat.title = "Sump Pump";
+                        break;
+                    case "9":
+                        cat.title = "Shelves";
+                        break;
+                    case "10":
+                        cat.title = "Doors";
+                        break;
+                    case "11":
+                        cat.title = "Drywall";
+                        break;
+
+
+                    default:
+                        Console.WriteLine("Default case");
+                        break;
+                }
+            }
+            //Concrete = 10 | ID: 1
+            //Downspouts = 30 | ID: 2
+            //Lawn = 40 | ID: 3
+            //Flooring = 50 | ID: 4
+            //Sinks = 60 - 80 | ID: 5
+            //Toilets = 90 - 110 | ID: 6
+            //Bath = 120 | ID: 7
+            //Sump = 130 | ID: 8
+            //Closet = 140 | ID: 9
+            //Doors = 150 | ID: 10
+            //Drywall = 160 | ID: 11
+
+        }
+
+
         public void sendReminderPushNotifs() {
             int id = 1;
             if(!loadingReminderContent) {

@@ -146,12 +146,12 @@
     <PackageReference Include="Xam.Plugins.Notifier">
       <Version>3.0.1</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
+    <PackageReference Include="Xamarin.Forms" Version="4.1.0.555618" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\HabitatBuddy\HabitatBuddy.csproj">
-      <Project>{ADBA72E4-78D7-47A2-BA65-C37EDD5045C4}</Project>
+      <Project>{1CB7CB33-671E-4630-A946-16B38D6E69A4}</Project>
       <Name>HabitatBuddy</Name>
     </ProjectReference>
   </ItemGroup>
