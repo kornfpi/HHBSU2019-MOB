@@ -322,42 +322,42 @@ namespace HabitatBuddy {
             //*********************************START EXTERIOR*********************************
             tree.addChild("What Location of the Exterior is the Problem Affecting?", "Exterior", null, "house_outside.png");
             tree.moveToChild(0);
-            tree.addChild("What issue is occuring with the Outside Walls of House?", "Outside Walls of House", null, "no70.png");
+            tree.addChild("What issue is occuring with the Outside Walls of House?", "Outside Walls of House", null, "siding.png");
             tree.moveToChild(0);
             tree.addChild("", "Hole in Siding/Piece of Siding Loose", siding, "siding.png");
             tree.moveToParent();
             tree.addChild("What issue is occuring with the Driveway?", "Driveway", null, "no70.png");
             tree.moveToChild(1);
-            tree.addChild("", "Cracks in Concrete 1/4\" or greater ", concrete, "no70.png");
+            tree.addChild("", "Cracks in Concrete 1/4\" or greater ", concrete, "outside_concrete_cracked_wtext.png");
             tree.moveToParent();
-            tree.addChild("What issue is occuring with the Corners of Home?", "At Several Outside Corners of Home", null, "no70.png");
+            tree.addChild("What issue is occuring with the Corners of Home?", "At Several Outside Corners of Home", null, "downspout.png");
             tree.moveToChild(2);
-            tree.addChild("", "Drain Line has Sunk / Seperated from the Downspout", downspouts, "no70.png");
+            tree.addChild("", "Drain Line has Sunk / Seperated from the Downspout", downspouts, "downspout_broken.png");
             tree.moveToParent();
 
-            tree.addChild("What issue is occuring with the Yard?", "Yard", null, "no70.png");
+            tree.addChild("What issue is occuring with the Yard?", "Yard", null, "grass.png");
             tree.moveToChild(3);
-            tree.addChild("", "Bare Spots in Lawn", lawn, "no70.png");
+            tree.addChild("", "Bare Spots in Lawn", lawn, "grass_bare_arrow.png");
             tree.moveToParent();
 
             tree.addChild("What issue is occuring with the Porch?", "Porch", null, "no70.png");
             tree.moveToChild(4);
-            tree.addChild("", "Cracks in Concrete 1/4\" or greater ", concrete, "no70.png");
+            tree.addChild("", "Cracks in Concrete 1/4\" or greater ", concrete, "outside_concrete_cracked_wtext.png");
             tree.moveToParent();
 
             tree.addChild("What issue is occuring with the Steps?", "Steps", null, "no70.png");
             tree.moveToChild(5);
-            tree.addChild("", "Cracks in Concrete 1/4\" or greater ", concrete, "no70.png");
+            tree.addChild("", "Cracks in Concrete 1/4\" or greater ", concrete, "outside_concrete_cracked_wtext.png");
             tree.moveToParent();
 
-            tree.addChild("What issue is occuring with the Sidewalk?", "Sidewalk", null, "no70.png");
+            tree.addChild("What issue is occuring with the Sidewalk?", "Sidewalk", null, "outside_concrete.png");
             tree.moveToChild(6);
-            tree.addChild("", "Cracks in Concrete 1/4\" or greater ", concrete, "no70.png");
+            tree.addChild("", "Cracks in Concrete 1/4\" or greater ", concrete, "outside_concrete_cracked_wtext.png");
             tree.moveToParent();
 
             tree.addChild("What issue is occuring with the Basement Wall?", "Basement Wall", null, "no70.png");
             tree.moveToChild(7);
-            tree.addChild("", "Cracks in Concrete 1/4\" or greater ", concrete, "no70.png");
+            tree.addChild("", "Cracks in Concrete 1/4\" or greater ", concrete, "outside_concrete_cracked_wtext.png");
             tree.moveToParent();
             //*********************************END EXTERIOR*********************************
 
@@ -372,8 +372,8 @@ namespace HabitatBuddy {
             tree.addChild("", "Toilet Clogged or Won't Flush", toilets_1, "toilet_clogged.png");
             tree.addChild("", "Bathub/Shower Not Draining", bath, "bathtub_overflow.png");
             tree.addChild("", "Sink Drain Pipes Leaking", sinks_1, "kitchensink_leakypipes.png");
-            tree.addChild("", "Toilet Leaking at Floor", toilets_2, "no70.png");
-            tree.addChild("", "Toilet Water Running Continuously",toilets_3, "no70.png");
+            tree.addChild("", "Toilet Leaking at Floor", toilets_2, "toilet_floorwater.png");
+            tree.addChild("", "Toilet Water Running Continuously",toilets_3, "toilet_endlessflushing.png");
 
             tree.moveToParent();
             tree.addChild("What issue is occuring with the Kitchen?", "Kitchen", null, "kitchen.png");
@@ -417,7 +417,7 @@ namespace HabitatBuddy {
 
             tree.addChild("What issue is occuring with the Basement?", "Basement", null, "no70.png");
             tree.moveToChild(8);
-            tree.addChild("", "Sump Pump not Working / Basement Wet", sump, "no70.png");
+            tree.addChild("", "Sump Pump not Working / Basement Wet", sump, "sumppump_floorwater.png");
             tree.moveToParent();
 
             //tree.addChild("What issue is occurring with Test 10", "Test", null, "no70.png");
