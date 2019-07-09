@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 
+
 namespace HabitatBuddy.Droid
 {
     [Activity(Label = "Homeowner Buddy", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
@@ -22,4 +23,5 @@ namespace HabitatBuddy.Droid
             LoadApplication(new App());
         }
     }
+
 }

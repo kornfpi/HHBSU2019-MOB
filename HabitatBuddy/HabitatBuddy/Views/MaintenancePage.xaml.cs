@@ -25,7 +25,7 @@ namespace HabitatBuddy.Views
             ObservableCollection<Models.MaintenanceItem> remindersNarrowed = new ObservableCollection<Models.MaintenanceItem>();
             foreach (Models.MaintenanceItem newItem in r)
             {
-                if (newItem.homecode != null && newItem.homecode.Equals(App.homecode))
+                if (newItem.homecode != null && newItem.homecode.Equals(App.regHomecode))
                 {
                     remindersNarrowed.Add(newItem);
                 }

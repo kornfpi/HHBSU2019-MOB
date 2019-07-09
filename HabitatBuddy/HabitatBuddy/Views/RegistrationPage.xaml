@@ -2,20 +2,26 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HabitatBuddy.Views.RegistrationPage"
-             Title ="Register Your App">
+             Title ="Habitat Homeowner Buddy"
+             NavigationPage.HasBackButton="false">
     <ContentPage.Content>
         <StackLayout>
 
-
+            <Label x:Name="Reg_Prompt" HorizontalTextAlignment="Center" FontAttributes ="Bold" TextColor="white" BackgroundColor="Red" IsVisible="False"/>
             <Label x:Name="Lbl_NoInternet" HorizontalTextAlignment="Center" FontAttributes ="Bold" TextColor="white" BackgroundColor="Red" />
 
-            <Label x:Name="Lbl_HomeCode" Text="Home Code"  IsVisible="False"/>
-            <Entry x:Name="Entry_HomeCode" Placeholder="home Code"  IsVisible="False"/>
+            <Label x:Name="Lbl_HomeCode" Text="Home Code"  />
+            <Entry x:Name="Entry_HomeCode" Placeholder="Your home code as provided by Habitat"  IsVisible="False"/>
 
-            <Label x:Name="Lbl_Username" Text="Username" IsVisible="False"/>
-            <Entry x:Name="Entry_Username" Placeholder="Username"  IsVisible="False"/>
+            <Label x:Name="Lbl_User_First_Name" Text="First Name" IsVisible="False"/>
+            <Entry x:Name="Entry_User_First_Name" Placeholder="Your first name"  IsVisible="False"/>
+
+            <Label x:Name="Lbl_User_Last_Name" Text="Last Name" IsVisible="False"/>
+            <Entry x:Name="Entry_User_Last_Name" Placeholder="Your last name"  IsVisible="False"/>
 
             <Button x:Name="Btn_Register" Text="Register App" Clicked="saveRegInfo"  IsVisible="False"/>
+
+            <Button x:Name="Btn_Continue" Text="Continue Without Registration" Clicked="continue_noreg"  IsVisible="false"/>
 
             <Button x:Name="Btn_Show" Text="Show Registration Info" Clicked="dispRegInfo"  IsVisible="True"/>
             <Button x:Name="Btn_Clear" Text="Clear Registration Info" Clicked="clearRegInfo"  IsVisible="True"/>

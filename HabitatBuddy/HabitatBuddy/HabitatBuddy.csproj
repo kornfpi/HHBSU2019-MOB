@@ -16,7 +16,8 @@
     <PackageReference Include="sqlite-net-pcl" Version="1.6.258-beta" />
     <PackageReference Include="Xam.Plugin.Connectivity" Version="4.0.0.190-beta" />
     <PackageReference Include="Xam.Plugins.Notifier" Version="3.0.1" />
-    <PackageReference Include="Xamarin.Forms" Version="4.1.0.555618" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.2.0-pre" />
+    <PackageReference Include="Xamarin.Forms" Version="4.0.0.425677" />
     <PackageReference Include="Xamarin.Forms.Theme.Base" Version="1.0.0.43-pre1" />
     <PackageReference Include="Xamarin.Forms.Theme.Light" Version="1.0.0.43-pre1" />  
   </ItemGroup>
@@ -28,12 +29,6 @@
     <EmbeddedResource Update="Views\CategoryPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\InternetTestPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\LoginPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Views\MaintenancePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -43,13 +38,6 @@
     <EmbeddedResource Update="Views\RegistrationInfoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\RegistrationTest.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Models\EmptyClass.cs" />

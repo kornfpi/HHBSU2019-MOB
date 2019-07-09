@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HabitatBuddy.MainPage"
-             Title="Homeowner Buddy">
+             Title="Homeowner Buddy"
+             NavigationPage.HasBackButton="false">
     <StackLayout Margin="10,10,10,10">
 
         <Label x:Name="Lbl_NoInternet" HorizontalTextAlignment="Center" FontAttributes ="Bold" TextColor="white" BackgroundColor="Red" />
@@ -22,14 +23,19 @@
                class="HorizontalRule"
                x:Name="MainLabel"/>
 
-        <Button Text="Register App" Clicked="appRegistered" class="RoundedLarge" x:Name="RegButton"/>
+        <Label Text=""
+               HorizontalOptions="Center"
+               FontAttributes="Bold"
+               Margin="20,10"
+               FontSize="Medium"
+               class="HorizontalRule"
+               x:Name="Address"/>
+
         <!--<Button Text="Check Internet Connection" Clicked="checkConn" class="RoundedLarge" x:Name="ConButton"/>-->
         <Button Text="Help Me Diagnose an Issue" Clicked="Diagnose_Button_Clicked" class="RoundedLarge" x:Name="AskButton"/>
         <Button Text="Category Search" Clicked="Category_Button_Clicked" class="RoundedLarge" x:Name="CategoryButton"/>
         <Button Text="Maintenance Reminders" Clicked="Reminder_Button_Clicked" class="Rounded" x:Name="ReminderButton"/>
-
-
-
+        <Button Text="Registration Settings" Clicked="appRegistered" class="RoundedSmall" x:Name="RegButton"/>
         <Button Text="All Issues " Clicked="AllIssueButton" class="Rounded" IsVisible="False" x:Name="ShowAllIssueButton"/>
     </StackLayout>
 </ContentPage>

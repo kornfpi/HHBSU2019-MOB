@@ -68,7 +68,7 @@ public class HomeRegInfoService
             Console.WriteLine("pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp  " + content.Headers);
                 if (response.IsSuccessStatusCode)
                 {
-                    Debug.WriteLine(@"--------------------------------------------------------------- Reg successfully saved.");
+                    Debug.WriteLine(@"PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP Reg successfully saved.");
                 }
                 else
                 {
@@ -85,7 +85,7 @@ public class HomeRegInfoService
         public async Task DeleteTodoItemAsync(string id)
         {
 
-            var uri = new Uri(string.Format(TodoREST.Constants.RestUrl, id));
+            var uri = new Uri(string.Format(TodoREST.Constants.RegInfo, id));
 
             try
             {
@@ -102,5 +102,10 @@ public class HomeRegInfoService
                 Debug.WriteLine(@"             ERROR {0}", ex.Message);
             }
         }
-    }
+
+  
+
+}
+
+
 

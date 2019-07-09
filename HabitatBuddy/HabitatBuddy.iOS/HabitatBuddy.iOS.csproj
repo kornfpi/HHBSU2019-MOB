@@ -65,10 +65,9 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Data\NetworkConnection.cs" />
-    <Compile Include="Data\SQLite_IOS.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Services\CloseApp.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -146,12 +145,15 @@
     <PackageReference Include="Xam.Plugins.Notifier">
       <Version>3.0.1</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="4.1.0.555618" />
+    <PackageReference Include="Xamarin.Essentials">
+      <Version>1.2.0-pre</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\HabitatBuddy\HabitatBuddy.csproj">
-      <Project>{1CB7CB33-671E-4630-A946-16B38D6E69A4}</Project>
+      <Project>{ADBA72E4-78D7-47A2-BA65-C37EDD5045C4}</Project>
       <Name>HabitatBuddy</Name>
     </ProjectReference>
   </ItemGroup>

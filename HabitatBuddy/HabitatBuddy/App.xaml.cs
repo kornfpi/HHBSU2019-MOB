@@ -1,4 +1,6 @@
-﻿using HabitatBuddy.Data;
+﻿// Main program which runs first on app startup
+
+using HabitatBuddy.Data;
 using HabitatBuddy.Models;
 using Plugin.Connectivity;
 using SQLite;
@@ -11,58 +13,56 @@ using TodoREST.Views;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
+using Xamarin.Essentials;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace HabitatBuddy {
     public partial class App : Application {
+
+        // To track issues
         public static HomeIssueManager IssueManager { get; private set; }
+
+        // To track maintenance items
         public static MaintenanceManager mManager { get; private set; }
 
-        // For registration
-        public static HomeRegInfoService HomeRegInfo { get; set; }
+        // To track home registration info
+        public static HomeRegInfoService HomeRegInfo { get; private set; }
+        public static bool isReg { get; private set; }
+        public static string regHomecode { get; private set; }
+        public static string regAddress { get; private set; }
+        public static string regName { get; private set; }
 
+        // For regular internet connectivity testing
+        private static Timer netCheckTimer;
+        public static bool isOnline { get; private set; }
 
-        static TokenDatabaseController tokenDatabase;
-        static UserDatabaseController userDatabase;
-        static RestService restService;
-        private static Label labelScreen;
-        private static bool hasInternet;
+        // Other private fields
         private static Page currentpage;
-        private static Timer timer;
-        private static Timer newer_timer;
-        private static bool noInterShow; // Toggle display of internet availablility
         public static string registeredName;
-
-
         public static string message = "Test Message";
-        public static bool isOnline = false;
+        // End other private fields
 
-        public static bool isReg;
-        public static string homecode;
-
-
-
-
+        // Main initialization of application
         public App() {
+
+            // Component must be initialized
             InitializeComponent();
 
-            // Remove these for final release
-            isReg = false;
-            registeredName = "Unregistered";
-            homecode = "8675310";
-            // End remove
-
-            noInterShow = false; // Set to display internet availability
-
-            MainPage = new NavigationPage(new MainPage());
-            MainPage.Title = "Homeowner Buddy";
+            // Initialize services
             IssueManager = new HomeIssueManager(new IssueService());
             mManager = new MaintenanceManager(new MaintenanceService());
             HomeRegInfo = new HomeRegInfoService();
 
+            // Start internet connectivity checking
+            initializeNetTimer();
+            checkNetConnectivity();
 
-            //MainPage = new NavigationPage(new IssueListPage());
+            // Get application registration info
+            getRegistrationInfo();
+
+            // Launch registration page
+            MainPage = new NavigationPage(new Views.RegistrationPage()); // Main app starts with registration prompt
+            MainPage.Title = "Homeowner Buddy";
         }
 
         protected override void OnStart() {
@@ -77,176 +77,65 @@ namespace HabitatBuddy {
             // Handle when your app resumes
         }
 
-        public static UserDatabaseController UserDatabase
+        // Creates timer which regularly calls upon checkNetConnectivity method
+        public static void initializeNetTimer()
         {
-            get
-            {
-                if(userDatabase == null)
-                {
-                    userDatabase = new UserDatabaseController();
-                }
-                return userDatabase;
-            }
-        }
-
-        public static TokenDatabaseController TokenDatabase
-        {
-            get
-            {
-                if (tokenDatabase == null)
-                {
-                    tokenDatabase = new TokenDatabaseController();
-                }
-                return tokenDatabase;
-            }
-        }
-
-        public static RestService RestService
-        {
-            get
-            {
-                if(restService == null)
-                {
-                    restService = new RestService();
-                }
-                return restService;
-            }
-        }
-
-
-        //--------- Internet Connection
-
-        public static void StartCheckIfInternet(Label label, Page page)
-        {
-            labelScreen = label;
-            label.Text = Models.Constants.NoInternetText;
-            label.IsVisible = false;
-            hasInternet = true;
-            currentpage = page;
-            if(timer == null)
-            {
-                // Changes here to CheckIfInternet type call (originally CheckIfInternetOvertime()
-                // Lambda function not originally async
-                timer = new Timer((e) =>
-                {
-                   CheckIfInternetOvertime();
-                }, null, 10, (int)TimeSpan.FromSeconds(3).TotalMilliseconds);
-            }
-        }
-
-        private static void CheckIfInternetOvertime()
-        {
-            var networkConnection = DependencyService.Get<INetworkConnection>();
-            networkConnection.CheckNetworkConnection();
-            if (networkConnection.IsConnected)
-            {
-                Device.BeginInvokeOnMainThread(async () =>
-                {
-                    if (hasInternet)
-                    {
-                        if (!noInterShow)
-                        {
-                            hasInternet = false;
-                            labelScreen.IsVisible = true;
-                            await ShowDisplayAlert();
-                        }
-                    }
-                });
-            }
-            else
-            {
-                Device.BeginInvokeOnMainThread(() =>
-                {
-                    hasInternet = true;
-                    labelScreen.IsVisible = false;
-                });
-            }
-        }
-
-        public static bool CheckIfInternet()
-        {
-            var networkConnection = DependencyService.Get<INetworkConnection>();
-            networkConnection.CheckNetworkConnection();
-            return networkConnection.IsConnected;
-        }
-
-        public static async Task<bool> CheckIfInternetAlert()
-        {
-            var networkConnection = DependencyService.Get<INetworkConnection>();
-            networkConnection.CheckNetworkConnection();
-            if (networkConnection.IsConnected)
-            {
-                if (!noInterShow)
-                {
-                    await ShowDisplayAlert();
-                }
-                return false;
-            }
-            return true;
-        }
-
-
-
-
-
-
-        // Creates timer which regularly checks connectivity and sets private members to reflect connection status
-        public static void CheckConnectivity_Timer()
-        {
-            if (newer_timer == null)
+            if (netCheckTimer == null)
             {
                 // Create timer which calls connection checking method regularly
-                newer_timer = new Timer((e) =>
+                netCheckTimer = new Timer((e) =>
                 {
-                   CheckConnectivity_Simple();
+                    checkNetConnectivity();
                 }, null, 10, (int)TimeSpan.FromSeconds(3).TotalMilliseconds);
             }
         }
 
         // Method checks connection status and updates private members as needed
-        // Displays connection status when offline as async label
-        public static void CheckConnectivity_Simple()
+        public static void checkNetConnectivity()
         {
-            // Check connection status using Xam.Connection NuGet
-            var isConnected = CrossConnectivity.Current.IsConnected;
-            if (isConnected == true)
+            var current = Connectivity.NetworkAccess;
+            if (current == NetworkAccess.Internet)
             {
                 isOnline = true;
             }
             else
             {
                 isOnline = false;
+                showInternetAlert();
             }
+            Console.WriteLine("-----------------------------------------------------------------------------" + isOnline);
         }
 
-        private static async Task ShowDisplayAlert()
+        // Alert which appears when internet is not connected
+        public static async Task showInternetAlert()
         {
-            noInterShow = false;
-            await currentpage.DisplayAlert("Internet", "Device has no internet, please reconnect", "Oke");
-            noInterShow = false;
+            await currentpage.DisplayAlert("Internet", "Device has no internet, please reconnect!", "Ok");
         }
 
-        // Get registration info and display name
-        public static void GetRegistrationInfo()
+        // Get registration info from local SQLite DB
+        public static void getRegistrationInfo()
         {
-            
+            // Connect to db and get registraion entry
             string dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "regDB.db3");
             var db = new SQLiteConnection(dbPath);
-            try
+            var regEntry = db.Table<Registration>().FirstOrDefault();
+            // Set local variables
+            if (regEntry != null) // Registration info exists
             {
-                var name = db.Table<Registration>().OrderBy(x => x.Name).FirstOrDefault().Name.ToString();
-                registeredName = name;
                 isReg = true;
+                regHomecode = regEntry.Id;
+                regName = regEntry.Name;
+                regAddress = regEntry.Address;
             }
-            catch
+            else // No registration info
             {
-                // Do Nothing
+                isReg = false;
+                regHomecode = "unregistered";
+                regName = "unregistered";
+                regAddress = "unregistered";
             }
-
         }
 
     }
-
-
 
 }

@@ -11,5 +11,6 @@ namespace HabitatBuddy.Models
         public string Id { get; set; } // House Number
         public string Name { get; set; } // User name 
         public bool isConfirmed { get; set; } // House number checked against database
+        public string Address { get; set; }
     }
 }
