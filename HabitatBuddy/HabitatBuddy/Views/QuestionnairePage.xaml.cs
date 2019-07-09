@@ -33,6 +33,7 @@ namespace HabitatBuddy.Views
             answerButtons.Add(answer_button_7);
             answerButtons.Add(answer_button_8);
             answerButtons.Add(answer_button_9);
+            answerButtons.Add(answer_button_10);
 
             answerButtonLabels = new List<Label>();
             answerButtonLabels.Add(answer_button_1_label);
@@ -44,6 +45,8 @@ namespace HabitatBuddy.Views
             answerButtonLabels.Add(answer_button_7_label);
             answerButtonLabels.Add(answer_button_8_label);
             answerButtonLabels.Add(answer_button_9_label);
+            answerButtonLabels.Add(answer_button_10_label);
+
 
             reloadButtons();
         }
@@ -203,6 +206,19 @@ namespace HabitatBuddy.Views
         private void Answer_9_Button_Clicked(object sender, EventArgs e)
         {
             tree.moveToChild(8);
+            if (tree.getActionPlan() is null)
+            {
+                buttonClicked = true;
+                Navigation.PushAsync(new HabitatBuddy.Views.QuestionnairePage(tree));
+            }
+            else
+            {
+                Navigation.PushAsync(new HabitatBuddy.Views.ActionPlanPage(tree.getActionPlan())); //Launch the action plan page
+            }
+        }
+        private void Answer_10_Button_Clicked(object sender, EventArgs e)
+        {
+            tree.moveToChild(9);
             if (tree.getActionPlan() is null)
             {
                 buttonClicked = true;

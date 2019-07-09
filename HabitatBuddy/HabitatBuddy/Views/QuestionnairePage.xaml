@@ -74,8 +74,12 @@
                 </StackLayout>
                 
                 <StackLayout Grid.Row="5" Grid.Column="0">
-                    <Label Text="Other" x:Name="answer_button_9_label"></Label>
+                    <Label Text="Other" x:Name="answer_button_9_label" class="ImageButtonLabel"></Label>
                     <ImageButton Clicked="Answer_9_Button_Clicked" x:Name="answer_button_9" class="Rounded"/>
+                </StackLayout>
+                <StackLayout Grid.Row="5" Grid.Column="1">
+                    <Label Text="Other" x:Name="answer_button_10_label" class="ImageButtonLabel"></Label>
+                    <ImageButton Clicked="Answer_10_Button_Clicked" x:Name="answer_button_10" class="Rounded"/>
                 </StackLayout>
             </Grid>
         </ScrollView>
