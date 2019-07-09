@@ -30,7 +30,10 @@ namespace HabitatBuddy {
         private ObservableCollection<Models.Category> categories;
 
         // Hard coded home issue references, to populate the decision tree
-        HomeIssue blank_issue, door_knob_loose, door_off_track, door_handle_broken, sewer, sump, water_heater_no_gas_electric, water_heater_yes_gas_electric, thermostat, hvac_electric, furnace_filter, furnace_lights;
+        //HomeIssue blank_issue, door_knob_loose, door_off_track, door_handle_broken, sewer, sump, water_heater_no_gas_electric, water_heater_yes_gas_electric, thermostat, hvac_electric, furnace_filter, furnace_lights;
+        HomeIssue blank_issue, concrete, siding, downspouts, lawn, flooring, sinks_1, sinks_2, sinks_3, toilets_1, toilets_2,
+            toilets_3, bath, sump, closet, doors, drywall;
+
 
         public MainPage() {
             InitializeComponent();
@@ -73,16 +76,35 @@ namespace HabitatBuddy {
             blank_issue.Content = "[Add instructions and video here]";
 
             // Initialize actionplan references
-            door_knob_loose = new HomeIssue();
-            door_off_track = new HomeIssue();
-            door_handle_broken = new HomeIssue();
-            sewer = new HomeIssue();
+            concrete = new HomeIssue();
+            siding = new HomeIssue();
+            siding = new HomeIssue();
+            downspouts = new HomeIssue();
+            lawn = new HomeIssue();
+            flooring = new HomeIssue();
+            sinks_1 = new HomeIssue();
+            sinks_2 = new HomeIssue();
+            sinks_3 = new HomeIssue();
+            toilets_1 = new HomeIssue();
+            toilets_2 = new HomeIssue();
+            toilets_3 = new HomeIssue();
+            bath = new HomeIssue();
             sump = new HomeIssue();
-            water_heater_no_gas_electric = new HomeIssue();
-            water_heater_yes_gas_electric = new HomeIssue();
-            thermostat = new HomeIssue();
-            hvac_electric = new HomeIssue();
-            furnace_filter = new HomeIssue();
+            closet = new HomeIssue();
+            doors = new HomeIssue();
+            drywall = new HomeIssue();
+
+            //door_knob_loose = new HomeIssue();
+            //siding = new HomeIssue();
+            //door_off_track = new HomeIssue();
+            //door_handle_broken = new HomeIssue();
+            //sewer = new HomeIssue();
+            //sump = new HomeIssue();
+            //water_heater_no_gas_electric = new HomeIssue();
+            //water_heater_yes_gas_electric = new HomeIssue();
+            //thermostat = new HomeIssue();
+            //hvac_electric = new HomeIssue();
+            //furnace_filter = new HomeIssue();
 
             // Initialize tree to default value, will be replaced when content is loaded
             tree = new Models.DecisionTree("In which area of the home is the problem occuring?");
@@ -225,29 +247,42 @@ namespace HabitatBuddy {
 
             // Iterate through all action plans, and link up to decision tree and populate categories
             foreach (HomeIssue issue in issueList.ItemsSource) {
-                if (issue.ActionPlanId == 10) {
-                    door_knob_loose = issue;
+                if (issue.ActionPlanId == 170) {
+                    concrete = issue;
                 } else if (issue.ActionPlanId == 20) {
-                    door_off_track = issue;
+                    siding = issue;
                 } else if (issue.ActionPlanId == 30) {
-                    door_handle_broken = issue;
+                    downspouts = issue;
                 } else if (issue.ActionPlanId == 40) {
-                    sewer = issue;
+                    lawn = issue;
                 } else if (issue.ActionPlanId == 50) {
-                    sump = issue;
+                    flooring = issue;
                 } else if (issue.ActionPlanId == 60) {
-                    water_heater_no_gas_electric = issue;
+                    sinks_1 = issue;
                 } else if (issue.ActionPlanId == 70) {
-                    water_heater_yes_gas_electric = issue;
+                    sinks_2 = issue;
                 } else if (issue.ActionPlanId == 80) {
-                    thermostat = issue;
+                    sinks_3 = issue;
                 } else if (issue.ActionPlanId == 90) {
-                    hvac_electric = issue;
+                    toilets_1 = issue;
                 } else if (issue.ActionPlanId == 100) {
-                    furnace_filter = issue;
+                    toilets_2 = issue;
                 } else if (issue.ActionPlanId == 110) {
-                    furnace_lights = issue;
+                    toilets_3 = issue;
+                } else if (issue.ActionPlanId == 120) {
+                    bath = issue;
+                } else if (issue.ActionPlanId == 130) {
+                    sump = issue;
+                } else if (issue.ActionPlanId == 140) {
+                    closet = issue;
+                } else if (issue.ActionPlanId == 150) {
+                    doors = issue;
+                } else if (issue.ActionPlanId == 160) {
+                    drywall = issue;
                 }
+                //else {
+                //    blank_issue = issue;
+                //}
 
                 // Create a category for the new issue or place it into appropriate category
                 bool newCategory = true;
@@ -269,96 +304,112 @@ namespace HabitatBuddy {
             // done loading category content
             loadingCategoryContent = false;
             CategoryButton.IsEnabled = true;
+
             tree = new Models.DecisionTree("Which area of the home is the problem affecting?");
+
+            //*********************************START EXTERIOR*********************************
             tree.addChild("What Location of the Exterior is the Problem Affecting?", "Exterior", null, "house_outside.png");
             tree.moveToChild(0);
             tree.addChild("What issue is occuring with the Outside Walls of House?", "Outside Walls of House", null, "no70.png");
             tree.moveToChild(0);
-            tree.addChild("", "Hole in Siding/Piece of Siding Loose", blank_issue, "siding.png");
+            tree.addChild("", "Hole in Siding/Piece of Siding Loose", siding, "siding.png");
             tree.moveToParent();
             tree.addChild("What issue is occuring with the Driveway?", "Driveway", null, "no70.png");
             tree.moveToChild(1);
-            tree.addChild("", "Cracks in Concrete 1/4\" or greater ", blank_issue, "no70.png");
+            tree.addChild("", "Cracks in Concrete 1/4\" or greater ", concrete, "no70.png");
             tree.moveToParent();
             tree.addChild("What issue is occuring with the Corners of Home?", "At Several Outside Corners of Home", null, "no70.png");
             tree.moveToChild(2);
-            tree.addChild("", "Drain Line has Sunk / Seperated from the Downspout", blank_issue, "no70.png");
+            tree.addChild("", "Drain Line has Sunk / Seperated from the Downspout", downspouts, "no70.png");
             tree.moveToParent();
 
             tree.addChild("What issue is occuring with the Yard?", "Yard", null, "no70.png");
             tree.moveToChild(3);
-            tree.addChild("", "Bare Spots in Lawn", blank_issue, "no70.png");
+            tree.addChild("", "Bare Spots in Lawn", lawn, "no70.png");
             tree.moveToParent();
 
             tree.addChild("What issue is occuring with the Porch?", "Porch", null, "no70.png");
             tree.moveToChild(4);
-            tree.addChild("", "Cracks in Concrete 1/4\" or greater ", blank_issue, "no70.png");
+            tree.addChild("", "Cracks in Concrete 1/4\" or greater ", concrete, "no70.png");
             tree.moveToParent();
 
             tree.addChild("What issue is occuring with the Steps?", "Steps", null, "no70.png");
             tree.moveToChild(5);
-            tree.addChild("", "Cracks in Concrete 1/4\" or greater ", blank_issue, "no70.png");
+            tree.addChild("", "Cracks in Concrete 1/4\" or greater ", concrete, "no70.png");
             tree.moveToParent();
 
             tree.addChild("What issue is occuring with the Sidewalk?", "Sidewalk", null, "no70.png");
             tree.moveToChild(6);
-            tree.addChild("", "Cracks in Concrete 1/4\" or greater ", blank_issue, "no70.png");
+            tree.addChild("", "Cracks in Concrete 1/4\" or greater ", concrete, "no70.png");
             tree.moveToParent();
 
             tree.addChild("What issue is occuring with the Basement Wall?", "Basement Wall", null, "no70.png");
             tree.moveToChild(7);
-            tree.addChild("", "Cracks in Concrete 1/4\" or greater ", blank_issue, "no70.png");
+            tree.addChild("", "Cracks in Concrete 1/4\" or greater ", concrete, "no70.png");
             tree.moveToParent();
+            //*********************************END EXTERIOR*********************************
 
+
+            //*********************************START INTERIOR*********************************
             tree.moveToParent();
             tree.addChild("What Location of the Interior is the Problem Affecting?", "Interior", null, "house_inside.png");
             tree.moveToChild(1);
             tree.addChild("What issue is occuring with the Bathroom?", "Bathroom", null, "bathroom450.png");
             tree.moveToChild(0);
-            tree.addChild("", "Sink Stopper Doesn't Work", blank_issue, "bathroomsink_stopper.png");
-            tree.addChild("", "Toilet Clogged or Won't Flush", blank_issue, "toilet_clogged.png");
-            tree.addChild("", "Bathub/Shower not Draining", blank_issue, "bathtub_overflow.png");
-            tree.addChild("", "Sink Drain Pipes Leaking", blank_issue, "kitchensink_leakypipes.png");
+            tree.addChild("", "Sink Stopper Doesn't Work", sinks_3, "bathroomsink_stopper.png");
+            tree.addChild("", "Toilet Clogged or Won't Flush", toilets_1, "toilet_clogged.png");
+            tree.addChild("", "Bathub/Shower Not Draining", bath, "bathtub_overflow.png");
+            tree.addChild("", "Sink Drain Pipes Leaking", sinks_1, "kitchensink_leakypipes.png");
+            tree.addChild("", "Toilet Leaking at Floor", toilets_2, "no70.png");
+            tree.addChild("", "Toilet Water Running Continuously",toilets_3, "no70.png");
+
             tree.moveToParent();
             tree.addChild("What issue is occuring with the Kitchen?", "Kitchen", null, "kitchen.png");
             tree.moveToChild(1);
-            tree.addChild("", "Garbage Disposal Not Working", blank_issue, "kitchensink_garbagedisposal.png");
-            tree.addChild("", "Sink Drain Pipes Leaking", blank_issue, "kitchensink_leakypipes.png");
-            tree.addChild("", "Damaged or Loose Piece of Flooring", blank_issue, "floor_cracked.png");
+            tree.addChild("", "Garbage Disposal Not Working", sinks_2, "kitchensink_garbagedisposal.png");
+            tree.addChild("", "Sink Drain Pipes Leaking", sinks_1, "kitchensink_leakypipes.png");
+            tree.addChild("", "Damaged or Loose Piece of Flooring", flooring, "floor_cracked.png");
             tree.moveToParent();
 
             tree.addChild("What issue is occuring with the Bedroom?", "Bedroom", null, "bed.png");
             tree.moveToChild(2);
-            tree.addChild("", "Wire Shelving or Brackets have come off Wall ", blank_issue, "closet_shelfoffwall.png") ;
-            tree.addChild("", "Bypass Doors off Track, Won't Slide, or Floor Guide", blank_issue, "closet_doorhelp.png");
-            tree.addChild("", "Damaged or Loose Piece of Flooring", blank_issue, "floor_cracked.png");
+            tree.addChild("", "Wire Shelving or Brackets have come off Wall ", closet, "closet_shelfoffwall.png") ;
+            tree.addChild("", "Bypass Doors Off-Track, Won't Slide, or Floor Guide", doors, "closet_doorhelp.png");
+            tree.addChild("", "Damaged or Loose Piece of Flooring", flooring, "floor_cracked.png");
             tree.moveToParent();
 
             tree.addChild("What issue is occuring with the Interior Walls of House?", "Throughout Interior Walls of House", null, "wall.png");
             tree.moveToChild(3);
-            tree.addChild("", "Nail or Screw Pops", blank_issue, "wall_nails.png");
+            tree.addChild("", "Nail or Screw Pops", drywall, "wall_nails.png");
             tree.moveToParent();
 
             tree.addChild("What issue is occuring with the Laundry/Linen?", "Laundry/Linen Closet", null, "laundry.png");
             tree.moveToChild(4);
-            tree.addChild("", "Wire Shelving or Brackets have come off Wall ", blank_issue, "closet_shelfoffwall.png");
+            tree.addChild("", "Wire Shelving or Brackets have come off Wall ", closet, "closet_shelfoffwall.png");
             tree.moveToParent();
 
             tree.addChild("What issue is occuring with the Pantry?", "Pantry", null, "no70.png");
             tree.moveToChild(5);
-            tree.addChild("", "Wire Shelving or Brackets have come off Wall ", blank_issue, "closet_shelfoffwall.png");
+            tree.addChild("", "Wire Shelving or Brackets have come off Wall ", closet, "closet_shelfoffwall.png");
             tree.moveToParent();
 
             tree.addChild("What issue is occuring with the Halls?", "Halls", null, "no70.png");
             tree.moveToChild(6);
-            tree.addChild("", "Damaged or Loose Piece of Flooring", blank_issue, "floor_cracked.png");
+            tree.addChild("", "Damaged or Loose Piece of Flooring", flooring, "floor_cracked.png");
             tree.moveToParent();
 
             tree.addChild("What issue is occuring with the Living Room?", "Living Room", null, "sofa.png");
             tree.moveToChild(7);
-            tree.addChild("", "Damaged or Loose Piece of Flooring", blank_issue, "floor_cracked.png");
+            tree.addChild("", "Damaged or Loose Piece of Flooring", flooring, "floor_cracked.png");
             tree.moveToParent();
 
+            tree.addChild("What issue is occuring with the Basement?", "Basement", null, "no70.png");
+            tree.moveToChild(8);
+            tree.addChild("", "Sump Pump not Working / Basement Wet", sump, "no70.png");
+            tree.moveToParent();
+
+
+            //*********************************END INTERIOR*********************************
 
 
             tree.moveToParent();

@@ -98,7 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HabitatBuddy\HabitatBuddy.csproj">
-      <Project>{ADBA72E4-78D7-47A2-BA65-C37EDD5045C4}</Project>
+      <Project>{1CB7CB33-671E-4630-A946-16B38D6E69A4}</Project>
       <Name>HabitatBuddy</Name>
     </ProjectReference>
   </ItemGroup>
