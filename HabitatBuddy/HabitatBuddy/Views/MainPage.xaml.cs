@@ -345,7 +345,7 @@ namespace HabitatBuddy {
             tree.addChild("", "Cracks in Concrete 1/4\" or greater ", concrete, "outside_concrete_cracked_wtext.png");
             tree.moveToParent();
 
-            tree.addChild("What issue is occuring with the Steps?", "Steps", null, "no70.png");
+            tree.addChild("What issue is occuring with the Steps?", "Steps", null, "outside_stairs.png");
             tree.moveToChild(5);
             tree.addChild("", "Cracks in Concrete 1/4\" or greater ", concrete, "outside_concrete_cracked_wtext.png");
             tree.moveToParent();
@@ -400,7 +400,7 @@ namespace HabitatBuddy {
             tree.addChild("", "Wire Shelving or Brackets have come off Wall ", closet, "closet_shelfoffwall.png");
             tree.moveToParent();
 
-            tree.addChild("What issue is occuring with the Pantry?", "Pantry", null, "no70.png");
+            tree.addChild("What issue is occuring with the Pantry?", "Pantry", null, "pantry.png");
             tree.moveToChild(5);
             tree.addChild("", "Wire Shelving or Brackets have come off Wall ", closet, "closet_shelfoffwall.png");
             tree.moveToParent();

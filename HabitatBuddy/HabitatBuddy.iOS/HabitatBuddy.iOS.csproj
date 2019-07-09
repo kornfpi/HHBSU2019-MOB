@@ -383,4 +383,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\basement_wall.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\outside_stairs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pantry.png" />
+  </ItemGroup>
 </Project>
