@@ -112,16 +112,27 @@ namespace HabitatBuddy {
             await currentpage.DisplayAlert("Internet", "Device has no internet, please reconnect!", "Ok");
         }
 
+
+
+        public static bool TableExists<T>(SQLiteConnection connection) { const string cmdText = "SELECT name FROM sqlite_master WHERE type='table' AND name=?"; var cmd = connection.CreateCommand(cmdText, typeof(T).Name); return cmd.ExecuteScalar<string>() != null; }
+
+
+
         // Get registration info from local SQLite DB
         public static void getRegistrationInfo()
         {
             // Connect to db and get registraion entry
             string dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "regDB.db3");
             var db = new SQLiteConnection(dbPath);
-            var regEntry = db.Table<Registration>().FirstOrDefault();
+
+
+            //var regEntry = db.Table<Registration>().FirstOrDefault();
+            bool checkTable = TableExists<Registration>(db);
+            var regEntry = checkTable ? db.Table<Registration>().FirstOrDefault() : null;
+
             // Set local variables
             if (regEntry != null) // Registration info exists
-            {
+            { 
                 isReg = true;
                 regHomecode = regEntry.Id;
                 regName = regEntry.Name;
