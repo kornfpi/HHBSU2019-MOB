@@ -366,7 +366,7 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\siding-broke.png" />
+    <BundleResource Include="Resources\siding_broke.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\basement.png" />
