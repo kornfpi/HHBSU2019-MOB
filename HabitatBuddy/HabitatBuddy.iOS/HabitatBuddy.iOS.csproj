@@ -193,4 +193,127 @@
   <ItemGroup>
     <BundleResource Include="Resources\wholehouse70.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\basement.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\basement_wall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bathroom450.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bathroomsink_stopper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bathtub_overflow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\closet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\closet_doorhelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\closet_shelfoffwall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-568h%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-Portrait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-Portrait%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\downspout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\downspout_broken.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\driveway_byhouse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\floor_cracked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\grass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\grass_bare_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\hall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\house_inside.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\house_outside.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\kitchen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\kitchensink_garbagedisposal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\kitchensink_leakypipes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\laundry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\outside_concrete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\outside_concrete_cracked_wtext.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\outside_stairs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pantry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\porch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\siding.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\siding_broke.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\sofa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\sumppump_floorwater.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\toilet_clogged.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\toilet_endlessflushing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\toilet_floorwater.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\wall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\wall_nails.png" />
+  </ItemGroup>
 </Project>
