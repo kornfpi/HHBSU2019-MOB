@@ -592,7 +592,7 @@ namespace HabitatBuddy
             MainLabel.IsVisible = true;
 
             // Schedule push notifications for maintenance items that are due soon
-            if(pushedNotifs = false)
+            if(!pushedNotifs)
             {
                 sendReminderPushNotifs();
                 pushedNotifs = true;
