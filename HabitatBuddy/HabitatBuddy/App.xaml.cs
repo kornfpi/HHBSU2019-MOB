@@ -112,11 +112,12 @@ namespace HabitatBuddy {
             await currentpage.DisplayAlert("Internet", "Device has no internet, please reconnect!", "Ok");
         }
 
-
-
-        public static bool TableExists<T>(SQLiteConnection connection) { const string cmdText = "SELECT name FROM sqlite_master WHERE type='table' AND name=?"; var cmd = connection.CreateCommand(cmdText, typeof(T).Name); return cmd.ExecuteScalar<string>() != null; }
-
-
+        // Method which checks if registration table exists in SQLite database
+        public static bool TableExists<T>(SQLiteConnection connection) {
+            const string cmdText = "SELECT name FROM sqlite_master WHERE type='table' AND name=?";
+            var cmd = connection.CreateCommand(cmdText, typeof(T).Name);
+            return cmd.ExecuteScalar<string>() != null;
+        }
 
         // Get registration info from local SQLite DB
         public static void getRegistrationInfo()
