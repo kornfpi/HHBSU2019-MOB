@@ -37,10 +37,16 @@ namespace HabitatBuddy
         HomeIssue blank_issue, concrete, siding, downspouts, lawn, flooring, sinks_1, sinks_2, sinks_3, toilets_1, toilets_2,
             toilets_3, bath, sump, closet, doors, drywall;
 
+        // For making sure maintenance notifs are displayed only once
+        private Boolean pushedNotifs;
+
         public MainPage()
         {
 
             InitializeComponent();
+
+            // Set maintenance notifs
+            pushedNotifs = false;
 
             // Get registration info
             App.getRegistrationInfo();
@@ -79,8 +85,6 @@ namespace HabitatBuddy
                     Lbl_NoInternet.Text = "Internet not connected! Some features may be disabled!";
                 });
             }
-
-
 
 
             // Construct a blank action plan, to be used when no action plan is available.
@@ -548,42 +552,37 @@ namespace HabitatBuddy
             ListView reminderList = new ListView();
             Console.WriteLine("Fetching Maintenance Reminders...");
 
-            reminderList.ItemsSource = await App.mManager.GetTasksAsync(); // Get all maintenance reminders
+            reminderList.ItemsSource = await App.mManager.GetTasksAsync(); // Get all maintenance reminders - <Maintenance> objects
             Console.WriteLine("Received Maintenance Reminders.");
 
-            // Filter maintenance reminders to match only this application's home code
-            ObservableCollection<Models.MaintenanceItem> remindersNarrowed = new ObservableCollection<Models.MaintenanceItem>();
-            foreach (Models.MaintenanceItem newItem in reminderList.ItemsSource)
-            {
-                if (newItem.homecode != null && newItem.homecode.Equals(App.regHomecode))
-                {   
-                    remindersNarrowed.Add(newItem);
-                }
-            }
 
-            // Wipe existing reminders and replace with filtered collection
-            // reminders = new ObservableCollection<Models.MaintenanceItem>();
-            reminders = remindersNarrowed;
-            reminderList.ItemsSource = remindersNarrowed;
+
+
+            // wipe existing reminders and replace with empty collection
+            reminders = new ObservableCollection<Models.MaintenanceItem>();
+
+
 
             int j = 3;//for TESTING DATES
             // Populate list of maintenance reminders
-            foreach (Models.Maintenance reminder in reminderList.ItemsSource)
-            {
-
-                HomeIssue plan = blank_issue; //Use blank action plan in case no plan with matching ID is found.
-                //Find the action plan that matches the reminder's action plan ID
-                foreach (HomeIssue issue in issueList.ItemsSource)
+            foreach (Models.Maintenance reminder in reminderList.ItemsSource) {
+                if (reminder.homecode.Equals(App.regHomecode))
                 {
-                    if (issue.ActionPlanId == reminder.ActionPlanId)
+
+                    HomeIssue plan = blank_issue; //Use blank action plan in case no plan with matching ID is found.
+                                                  //Find the action plan that matches the reminder's action plan ID
+                    foreach (HomeIssue issue in issueList.ItemsSource)
                     {
-                        plan = issue;
+                        if (issue.ActionPlanId == reminder.ActionPlanId)
+                        {
+                            plan = issue;
+                        }
                     }
+                    Models.MaintenanceItem newReminder = new Models.MaintenanceItem(reminder.Name, reminder.RecurrencePeriod, plan, reminder.homecode);
+                    newReminder.dueDate = new DateTime(2019, 4, 16 - j); //FOR TESTING DATES
+                    j -= 3;  //FOR TESTING DATES
+                    reminders.Add(newReminder);
                 }
-                Models.MaintenanceItem newReminder = new Models.MaintenanceItem(reminder.Name, reminder.RecurrencePeriod, plan, reminder.homecode);
-                newReminder.dueDate = new DateTime(2019, 4, 16 - j); //FOR TESTING DATES
-                j -= 3;  //FOR TESTING DATES
-                reminders.Add(newReminder);
             }
 
             // Done loading maintenance reminders
@@ -593,8 +592,13 @@ namespace HabitatBuddy
             MainLabel.IsVisible = true;
 
             // Schedule push notifications for maintenance items that are due soon
-            sendReminderPushNotifs();
+            if(pushedNotifs = false)
+            {
+                sendReminderPushNotifs();
+                pushedNotifs = true;
+            }
         }
+
         public void sendReminderPushNotifs()
         {
             int id = 1;
