@@ -136,8 +136,6 @@ namespace HabitatBuddy
             }
         }
 
-
-
         /*
          * Listener for category view button
          */
@@ -175,6 +173,8 @@ namespace HabitatBuddy
         protected async override void OnAppearing()
         {
             base.OnAppearing();
+
+            // Set initial views
             LoadingLabel.IsVisible = true;
             MainLabel.IsVisible = false;
             // reset flags to true since content is now loading
@@ -541,21 +541,36 @@ namespace HabitatBuddy
             loadingActionPlanContent = false; //Set flag to false because tree is constructed, questionnaire page can now be launched
             AskButton.IsEnabled = true;
 
+
+            // MAINTENANCE ITEMS LOADING--------------------------------------
+
             // Load maintenance reminder content from the database
             ListView reminderList = new ListView();
             Console.WriteLine("Fetching Maintenance Reminders...");
-            reminderList.ItemsSource = await App.mManager.GetTasksAsync();
+
+            reminderList.ItemsSource = await App.mManager.GetTasksAsync(); // Get all maintenance reminders
             Console.WriteLine("Received Maintenance Reminders.");
 
-            // wipe existing reminders and replace with empty collection
-            reminders = new ObservableCollection<Models.MaintenanceItem>();
+            // Filter maintenance reminders to match only this application's home code
+            ObservableCollection<Models.MaintenanceItem> remindersNarrowed = new ObservableCollection<Models.MaintenanceItem>();
+            foreach (Models.MaintenanceItem newItem in reminderList.ItemsSource)
+            {
+                if (newItem.homecode != null && newItem.homecode.Equals(App.regHomecode))
+                {   
+                    remindersNarrowed.Add(newItem);
+                }
+            }
 
-
+            // Wipe existing reminders and replace with filtered collection
+            // reminders = new ObservableCollection<Models.MaintenanceItem>();
+            reminders = remindersNarrowed;
+            reminderList.ItemsSource = remindersNarrowed;
 
             int j = 3;//for TESTING DATES
             // Populate list of maintenance reminders
             foreach (Models.Maintenance reminder in reminderList.ItemsSource)
             {
+
                 HomeIssue plan = blank_issue; //Use blank action plan in case no plan with matching ID is found.
                 //Find the action plan that matches the reminder's action plan ID
                 foreach (HomeIssue issue in issueList.ItemsSource)
@@ -668,7 +683,6 @@ namespace HabitatBuddy
                     case "11":
                         cat.title = "Drywall";
                         break;
-
 
                     default:
                         Console.WriteLine("Default case");

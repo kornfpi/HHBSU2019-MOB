@@ -19,28 +19,23 @@ namespace HabitatBuddy.Views
 		{
 			InitializeComponent ();
 
-
-            // ---------------------------------- Changes Here!
-            
-            ObservableCollection<Models.MaintenanceItem> remindersNarrowed = new ObservableCollection<Models.MaintenanceItem>();
-            foreach (Models.MaintenanceItem newItem in r)
-            {
-                if (newItem.homecode != null && newItem.homecode.Equals(App.regHomecode))
-                {
-                    remindersNarrowed.Add(newItem);
-                }
-            }
-
-            //---------------------------------------------
-
+            //// Filter maintenance reminders to match only this application's home code
+            //ObservableCollection<Models.MaintenanceItem> remindersNarrowed = new ObservableCollection<Models.MaintenanceItem>();
+            //foreach (Models.MaintenanceItem newItem in r)
+            //{
+            //    if (newItem.homecode != null && newItem.homecode.Equals(App.regHomecode))
+            //    {
+            //        remindersNarrowed.Add(newItem);
+            //    }
+            //}
 
             // Update all display titles to show appropriate date
-            foreach (Models.MaintenanceItem reminder in remindersNarrowed) // Used to be in r
+            foreach (Models.MaintenanceItem reminder in r) 
             {
                 reminder.reloadTitle();
             }
 
-            reminders = remindersNarrowed; // Used to be r
+            reminders = r; 
             ReminderList.ItemsSource = reminders;
             ViewPlanButton.IsEnabled = false;
             CompleteButton.IsEnabled = false;
