@@ -251,14 +251,22 @@ namespace HabitatBuddy.Views
                 if (entry == (null)) break;
                 foreach (HomeRegInfo regInfo in registrationList.ItemsSource)
                 {
-                   
                     if (entry.Equals(regInfo.homeNumber))
                     {
                         if (regInfo.registeredTo != null && !regInfo.registeredTo.Equals(" ") && isClear == false) break;
                         regExists = true;
+                        string currentName = regInfo.registeredTo;
                         regInfo.registeredTo = isClear ? null : Entry_User_First_Name.Text + " " + Entry_User_Last_Name.Text;
                         await App.HomeRegInfo.SaveTodoItemAsync(regInfo, false);
                         recievedAddress = regInfo.streetAddress;
+
+                        // Save log info
+                        Log newLog = new Log();
+                        newLog.HomeNumber = regInfo.homeNumber;
+                        newLog.HomeOwner = isClear? currentName : Entry_User_First_Name.Text + " " + Entry_User_Last_Name.Text;
+                        newLog.Action = isClear? "Removed application registration to HomeNumber." : "Registered application to HomeNumber.";
+                        newLog.Date = DateTime.Now.ToString();
+                        await App.LogManager.SaveTodoItemAsync(newLog, false);
                     }
                 }
                 break;

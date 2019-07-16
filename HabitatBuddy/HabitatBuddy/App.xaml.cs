@@ -55,6 +55,7 @@ namespace HabitatBuddy {
             IssueManager = new HomeIssueManager(new IssueService());
             mManager = new MaintenanceManager(new MaintenanceService());
             HomeRegInfo = new HomeRegInfoService();
+            LogManager = new LoggingService();
 
             // Start internet connectivity checking
             initializeNetTimer();

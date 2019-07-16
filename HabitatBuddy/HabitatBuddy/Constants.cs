@@ -12,6 +12,6 @@
         public static string RestUrl = "https://hhbsu19-new.azurewebsites.net/api/issue/{0}";
         public static string mUrl = "https://hhbsu19-new.azurewebsites.net/api/maintenance/{0}";
         public static string RegInfo = "https://hhbsu19-new.azurewebsites.net/api/homereginfo/{0}";
-        public static string LogInfo = "https://hhbsu19-new.azurewebsites.net/api/logs/{0}";
+        public static string LogInfo = "https://hhbsu19-new.azurewebsites.net/api/logrest/{0}";
     }
 }
