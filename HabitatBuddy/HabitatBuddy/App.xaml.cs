@@ -36,6 +36,9 @@ namespace HabitatBuddy {
         private static Timer netCheckTimer;
         public static bool isOnline { get; private set; }
 
+        // For logging specific actions
+        public static LoggingService LogManager { get; private set; }
+
         // Other private fields
         private static Page currentpage;
         public static string registeredName;
