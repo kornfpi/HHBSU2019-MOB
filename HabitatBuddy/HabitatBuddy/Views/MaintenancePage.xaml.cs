@@ -1,4 +1,5 @@
-﻿using Plugin.LocalNotifications;
+﻿using HabitatBuddy.Models;
+using Plugin.LocalNotifications;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -41,15 +42,27 @@ namespace HabitatBuddy.Views
             CompleteButton.IsEnabled = false;
         }
 
-        private void Complete_Clicked(object sender, EventArgs e) {
+        private async void Complete_Clicked(object sender, EventArgs e) {
             if(!(ReminderList.SelectedItem is null)) {
                 var selected = (Models.MaintenanceItem)ReminderList.SelectedItem;
-                if((int)(selected.dueDate - DateTime.Today).TotalDays < 7) {
+                // Save log info
+                if (App.isReg)
+                {
+                    App.getRegistrationInfo();
+                    Log newLog = new Log();
+                    newLog.HomeNumber = App.regHomecode;
+                    newLog.HomeOwner = App.regName;
+                    newLog.Action = "Marked \"" + selected.displayTitle + "\" as completed.";
+                    newLog.Date = DateTime.Now.ToString();
+                    await App.LogManager.SaveTodoItemAsync(newLog, false);
+                }
+                // Reset timer
+                if ((int)(selected.dueDate - DateTime.Today).TotalDays < 7) {
                     selected.resetDueDate();
                     ReminderList.ItemsSource = null;
                     ReminderList.ItemsSource = reminders;
                 } else {
-
+                    // Cannot click button
                 }
             }
         }
