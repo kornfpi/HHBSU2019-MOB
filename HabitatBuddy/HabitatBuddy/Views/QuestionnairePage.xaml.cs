@@ -21,6 +21,16 @@ namespace HabitatBuddy.Views
         {
             InitializeComponent();
 
+            if(t.getAnswerText() != "blank answer")
+            {
+                Title = t.getAnswerText();
+            } else
+            {
+                Title = "Diagnose An Issue";
+            }
+            
+
+
             tree = t;
 
             answerButtons = new List<ImageButton>();

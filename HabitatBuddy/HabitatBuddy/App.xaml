@@ -26,6 +26,29 @@
                 <Setter Property="TextColor" Value="{ StaticResource GeneralTextColor }" />
             </Style>
 
+            <Style TargetType="StackLayout" Class="ImageButtonLayout">
+                <Setter Property="Padding" Value="5"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+            </Style>
+
+            <Style TargetType="Label" Class="ImageButtonLabel">
+                <Setter Property="TextColor" Value="{ StaticResource GeneralTextColor }" />
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <!--set VerticalOptions to CenterAndExpand to make single-line text vertically centered-->
+                <Setter Property="VerticalOptions" Value="EndAndExpand"/>
+                <Setter Property="Margin" Value="0"/>
+            </Style>
+
+            <Style TargetType="ImageButton" Class="Rounded">
+                <Setter Property="BackgroundColor" Value="{ StaticResource HabitatBlue }" />
+                <Setter Property="CornerRadius" Value="8"/>
+                <Setter Property="Aspect" Value="Fill"/>
+                <Setter Property="HeightRequest" Value="150"/>
+                <Setter Property="VerticalOptions" Value="End"/>
+            </Style>
+
             <Style TargetType="Button" Class="Rounded">
                 <Setter Property="BackgroundColor" Value="{ StaticResource HabitatBlue }" />
                 <Setter Property="TextColor" Value="White"/>
