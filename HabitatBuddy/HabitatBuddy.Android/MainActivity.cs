@@ -10,7 +10,7 @@ using Android.OS;
 
 namespace HabitatBuddy.Droid
 {
-    [Activity(Label = "Homeowner Buddy", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "Homeowner Buddy", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -23,5 +23,4 @@ namespace HabitatBuddy.Droid
             LoadApplication(new App());
         }
     }
-
 }

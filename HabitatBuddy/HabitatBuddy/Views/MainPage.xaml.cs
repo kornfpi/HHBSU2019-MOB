@@ -8,6 +8,7 @@ using HabitatBuddy;
 using Plugin.LocalNotifications;
 using HabitatBuddy.Models;
 using Xamarin.Forms.Xaml;
+using System.Text.RegularExpressions;
 
 namespace HabitatBuddy
 {
@@ -238,6 +239,10 @@ namespace HabitatBuddy
             // Iterate through all action plans, and link up to decision tree and populate categories
             foreach (HomeIssue issue in issueList.ItemsSource)
             {
+                if (!issue.Content.Contains("youtube"))
+                {
+                    issue.Content = parseLink(issue.Content);
+                }
                 if (issue.ActionPlanId == 170)
                 {
                     concrete = issue;
@@ -640,6 +645,24 @@ namespace HabitatBuddy
                     id++;
                 }
             }
+        }
+
+        private String parseLink(String content)
+        {
+            var linkRegex = new Regex(@"\b(?:https?://|www\.)\S+\b", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+            var rawString = content;
+            String[] a = rawString.Split();
+
+            for (int i = 0; i < a.Length; i++)
+            {
+                if (linkRegex.IsMatch(a[i]))
+                {
+                    String link = a[i];
+                    a[i] = "<a href=" + "\"" + link + "\"" + ">" + link + "</a>";
+                }
+            }
+            content = string.Join(" ", a);
+            return content;
         }
 
         private void setCategoryTitles()
