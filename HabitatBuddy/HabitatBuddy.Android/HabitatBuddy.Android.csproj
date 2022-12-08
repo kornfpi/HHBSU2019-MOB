@@ -49,7 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json">
-      <Version>12.0.2</Version>
+      <Version>13.0.2</Version>
     </PackageReference>
     <PackageReference Include="sqlite-net-pcl">
       <Version>1.6.258-beta</Version>
